@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a1f3231-d3ae-48ad-8d47-78b62e52178a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/fsloader.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/.jshintrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/HOW_TO_CONTRIBUTE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/Jake/templates/package.json.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/changes.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/conf.json.EXAMPLE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/jsdoc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/lib/js.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/github-flavored-markdown/.npmignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/js2xmlparser/LICENSE.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/markdown/README.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/taffydb/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/markdown.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/fixtures/railsTemplate.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/container.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/details.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/example.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/examples.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/exceptions.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/fires.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/layout.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/mainpage.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/members.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/method.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/params.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/properties.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/returns.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/tutorial.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/tmpl/type.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/haruki/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/tmpl/layout.tmpl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/markdowntest.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/tutorials/test2.markdown" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/img/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/cssxfire.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fsloader-0.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/fsloader-0.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/compile.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/Apache_License_2.0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/Jake/lib/mustache.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/Jakefile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/jsdoc.cmd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/jsdoc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/lib/MPL_1.1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/lib/rhino-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/async/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/async/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/async/lib/async.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/async/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/github-flavored-markdown/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/github-flavored-markdown/scripts/showdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/js2xmlparser/lib/js2xmlparser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/js2xmlparser/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jsMD5/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jsMD5/md5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jsMD5/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jshint/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jshint/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/jshint/packages/jshint/jshint.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/markdown/lib/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/markdown/lib/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/markdown/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/taffydb/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/taffydb/taffy-test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/taffydb/taffy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/underscore/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/underscore/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/underscore/underscore.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/wrench/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/wrench/lib/wrench.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/node_modules/wrench/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/npm-debug.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/commentConvert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/escapeHtml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/partial.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/prettyPrintSource.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/railsTemplate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/shout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/sourcetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/commentConvert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/escapeHtml.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/railsTemplate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/shout.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/sourcetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/test/specs/verboseOutput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/plugins/verboseOutput.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/common/args.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/common/events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/common/query.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/common/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/fs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/augment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/borrow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/doclet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/name.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/opts/parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/package.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/readme.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/schema.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/src/filter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/src/handlers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/src/parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/src/scanner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/dictionary.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/dictionary/definitions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/type/closureCompilerType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/type/jsdocType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tag/validator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tutorial.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/tutorial/resolver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/util/doop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/util/dumper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/util/error.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/util/markdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/jsdoc/util/templateHelper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/os.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/path.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/sys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/rhino_modules/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/publish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/static/scripts/prettify/Apache-License-2.0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/static/scripts/prettify/lang-css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/static/scripts/prettify/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/static/styles/jsdoc-default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/default/static/styles/prettify-jsdoc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/haruki/publish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/publish.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/static/scripts/prettify/Apache-License-2.0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/static/scripts/prettify/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/static/styles/desert.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/static/styles/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/templates/prettyPrintSource/static/styles/sunburst.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/async-callback.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/abstracttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/accesstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/alias.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/alias2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/alias3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/aliasglobal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/aliasglobal2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/aliasresolve.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/aliasresolve2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/also.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/augmentstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/augmentstag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/authortag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/borrowstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/borrowstag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/classtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructortag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructstag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructstag3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructstag4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/constructstag5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/copyrighttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/defaulttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/deprecatedtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/destructuring.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/doclet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/enumtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/eventfirestag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exceptiontag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exports.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exportstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exportstag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exportstag3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/exportstag4.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/externals.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/externals2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/file.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/getset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/globaltag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/ignoretag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/ignoretag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/inlinecomment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/inner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/innerscope.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/innerscope2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/jshint/badfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/jshint/goodfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/jslangnames.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/lends.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/lends2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/lends3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/lendsglobal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/linktag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/memberoftag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/memberoftag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/memberoftag3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/memberoftagforced.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/moduleinner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/moduleisconstructor.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/modules/data/mod-1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/modules/data/mod-2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/modules/data/mod-3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/moduletag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/moduletag2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/moduletag3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/namedFuncStatement.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/namedFuncStatement2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/namedFuncStatement3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/objectlit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/objectlit2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/objectpropertykeys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/paramtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/privatetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/projecttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/propertytag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/quotename.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/quotename2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/readonlytag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/requirestag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/returnstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/seetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/sincetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/specialnames.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/_dir2/four.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/_ignored.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/dir1/three.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/ignored.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/one.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/src/two.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/starbangstar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/testPlugin1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/testPlugin2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/this-and-objectlit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/this.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/this2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/this3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/thistag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/typedeftag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/typekind.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/typetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/utf8.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/var.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/variations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/variations2.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/variations3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/versiontag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/fixtures/virtual.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/jasmine-jsdoc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/lib/jasmine.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/reporter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/runner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/spec-collection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/common/args.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/common/events.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/common/query.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/common/util.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/alias.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/also.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/exports.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/getset.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/inlinecomment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/inner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/innerscope.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/lends.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/moduleinner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/modules.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/namedFuncStatement.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/objectlit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/objectpropertykeys.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/quotename.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/specialnames.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/starbangstar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/this.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/var.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/variations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/documentation/virtual.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/fs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/helpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/augment.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/borrow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/doclet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/functions/include.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/name.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/opts/parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/readme.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/src/filter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/src/handlers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/src/parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/src/scanner.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag/dictionary.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag/type.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag/type/closureCompilerType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag/type/jsdocType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tag/validator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tutorial.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/tutorial/resolver.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/util/doop.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/util/dumper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/util/error.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jsdoc/util/templateHelper.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/jshint/jshint-clean.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/os.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/path.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/abstracttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/accesstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/augmentstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/authortag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/borrowstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/classtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/constructortag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/constructstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/copyrighttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/defaulttag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/deprecatedtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/enumtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/eventfirestag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/exceptiontag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/exportstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/globaltag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/ignoretag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/memberoftag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/moduletag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/overviewtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/paramtag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/privatetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/propertytag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/readonlytag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/requirestag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/returnstag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/seetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/sincetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/thistag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/typedeftag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/typekind.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/typetag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/specs/tags/versiontag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/build.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/incomplete/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/incomplete/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/src/x.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/tutorials/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/tutorials/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compiler/jsdocs/test/tutorials/tutorials/test2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/FSLoader.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/FSLoaderHelpers.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/global.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/scripts/prettify/Apache-License-2.0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/scripts/prettify/lang-css.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/scripts/prettify/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/styles/jsdoc-default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/styles/prettify-jsdoc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/img/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/core/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/debug/DebugUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/display/spritesheet.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/display/timeline.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/fsloader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/fsloaderhelpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/fsloaderitem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/fsloaderqueue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/loader/fspreloader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/manipulation/CSSManipulate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/navigation/hash-manager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/polyfills/array.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/polyfills/function.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/polyfills/string.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/utils/FormUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/utils/StringUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/franchistein/utils/URLUtils.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/libs/jquery-1.7.1.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/libs/jquery-1.8.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/libs/modernizr-2.5.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/js/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fsloader.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fsloaderhelpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fsloaderitem.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fsloaderqueue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/fspreloader.js" />
+    </list>
+    <ignored path="fsloader.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="fsloader" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examples/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="38" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.70520234">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/teste.txt" />
+        <option value="$PROJECT_DIR$/LICENSE" />
+        <option value="$PROJECT_DIR$/compiler/compile.py" />
+        <option value="$PROJECT_DIR$/build/fsloader-0.1.min.js" />
+        <option value="$PROJECT_DIR$/compiler/complete_compile.py" />
+        <option value="$PROJECT_DIR$/examples/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="916" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a1f3231-d3ae-48ad-8d47-78b62e52178a" name="Default" comment="" />
+      <created>1351097780844</created>
+      <updated>1351097780844</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1456" height="916" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20112915" sideWeight="0.6707317" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="JsTestDriver Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="611" selection-end="611" vertical-scroll-proportion="0.30232558" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/compile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.071528755" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/fsloader-0.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="26" selection-start="290" selection-end="291" vertical-scroll-proportion="0.024285715" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="38" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.70520234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
