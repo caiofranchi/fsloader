@@ -6,14 +6,16 @@
 
 ### SETTING UP A SIMPLE FS LOADER
 
+```html
 var MainLoader = new FSLoader();
 MainLoader.load("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",{oncomplete:onCompleteJquery});
 
 function onCompleteJquery(){
     //this.element
 }
+```
 
-### SINGLE EVENTS
+### SINGLE ITEM EVENTS
 
 ### SETTING UP A QUEUE
 
