@@ -17,7 +17,7 @@ queue.add("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", {id:"jqu
 queue.add("js/libs/jquery-1.8.0.min.js");
 queue.add("logo.php", {type:FSLoaderHelpers.TYPE_CSS});
 queue.start();
-```html
+```
 
 
 ### QUEUE EVENTS
