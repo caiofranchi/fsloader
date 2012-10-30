@@ -6,17 +6,33 @@
 
 ### SETTING UP A SIMPLE FS LOADER
 
+var MainLoader = new FSLoader();
+MainLoader.load("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",{oncomplete:onCompleteJquery});
+
+function onCompleteJquery(){
+    //this.element
+}
+
 ### SINGLE EVENTS
 
 ### SETTING UP A QUEUE
 
 ```html
-var queue  = new FSLoaderQueue({onqueuecomplete:onCompleteQueue);
+var queue  = new FSLoaderQueue({onqueuecomplete:onCompleteQueue, onqueueprogress:onProgressQueue);
 queue.add("img/logo.png");
-queue.add("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", {id:"jquery-external",oncomplete:onCompletejQuery});
+queue.add("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", {id:"jquery-external", oncomplete:onCompletejQuery});
 queue.add("js/libs/jquery-1.8.0.min.js");
 queue.add("logo.php", {type:FSLoaderHelpers.TYPE_CSS});
 queue.start();
+
+function onProgressQueue () {
+    console.log("Progress: "+this.progress);
+}
+
+function onCompleteQueue () {
+    console.log("Queue Complete");
+}
+
 ```
 
 

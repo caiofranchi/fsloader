@@ -37,7 +37,7 @@
       <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/examples/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="0" selection-start="2414" selection-end="2882" vertical-scroll-proportion="0.0">
+            <state line="4" column="202" selection-start="17" selection-end="252" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,7 +55,7 @@
       <file leaf-file-name="readme.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="3" selection-start="545" selection-end="545" vertical-scroll-proportion="0.44186047">
+            <state line="11" column="28" selection-start="331" selection-end="331" vertical-scroll-proportion="0.25581396">
               <folding />
             </state>
           </provider>
@@ -275,7 +275,11 @@
       <created>1351615776667</created>
       <updated>1351615776667</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- Working on docs">
+      <created>1351615835481</created>
+      <updated>1351615835481</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -370,30 +374,9 @@
         <state line="17" column="26" selection-start="290" selection-end="291" vertical-scroll-proportion="0.024285715" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/compile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="10" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2414" selection-end="2882" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="17" selection-start="2690" selection-end="2690" vertical-scroll-proportion="-29.423077">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/fsloader-0.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="22" selection-start="48" selection-end="63" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -407,9 +390,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/fsloader-0.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="22" selection-start="48" selection-end="63" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/compile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="10" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="202" selection-start="17" selection-end="252" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="3" selection-start="545" selection-end="545" vertical-scroll-proportion="0.44186047">
+        <state line="11" column="28" selection-start="331" selection-end="331" vertical-scroll-proportion="0.25581396">
           <folding />
         </state>
       </provider>
