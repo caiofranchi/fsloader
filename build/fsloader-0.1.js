@@ -172,7 +172,7 @@ window.FSLoaderHelpers = {
 
     /**
 
-     @method isBinary
+     @method isXHR2Supported
      @description Verify if the current browser supports XHR2
 
      @returns {Boolean} returns true if supports and false if not

@@ -1,6 +1,6 @@
 # FSLoader
 
- A lightweight (2KB minified and gzipped)) independent library for preloading, lazy loading and queue loading different kind of assets.
+ A complete and lightweight(~14kb) lib for single loading, queue loading and preloading assets.
 
 ## Quick start
 
@@ -9,6 +9,16 @@
 ### SINGLE EVENTS
 
 ### SETTING UP A QUEUE
+
+```html
+var queue  = new FSLoaderQueue({onqueuecomplete:onCompleteQueue);
+queue.add("img/logo.png");
+queue.add("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", {id:"jquery-external",oncomplete:onCompletejQuery});
+queue.add("js/libs/jquery-1.8.0.min.js");
+queue.add("logo.php", {type:FSLoaderHelpers.TYPE_CSS});
+queue.start();
+```html
+
 
 ### QUEUE EVENTS
 
