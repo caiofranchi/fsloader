@@ -78,6 +78,16 @@ window.FSLoaderHelpers = {
         };
     },
 
+    /**
+
+     @method getFileExtension
+     @description Returns a String with the file extension of a given URL
+
+     @param {String} pStrPath The URL path
+
+     @returns {String} returns the file extension
+
+     */
     getFileExtension: function (pStrPath) {
         "use strict";
         return pStrPath.split('.').pop();

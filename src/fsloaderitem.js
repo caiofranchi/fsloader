@@ -4,6 +4,19 @@
  * Date: 03/10/12
  * Time: 16:17
  */
+
+/**
+
+ @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+
+ @description Single LoaderItem for registering data of each loadable element
+ @namespace window
+ @constructor
+ @class FSLoaderItem
+ @param {FSLoader} pRef The FSLoader owner of this item
+ @param {String} pStrPath The path for loading
+ @param {Object} pObjOptions Options for this individual loading
+ */
 window.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
     "use strict";
     //setup

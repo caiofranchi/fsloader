@@ -78,6 +78,16 @@ window.FSLoaderHelpers = {
         };
     },
 
+    /**
+
+     @method getFileExtension
+     @description Returns a String with the file extension of a given URL
+
+     @param {String} pStrPath The URL path
+
+     @returns {String} returns the file extension
+
+     */
     getFileExtension: function (pStrPath) {
         "use strict";
         return pStrPath.split('.').pop();
@@ -197,6 +207,19 @@ window.FSLoaderHelpers = {
  * Author: caio.franchi
  * Date: 03/10/12
  * Time: 16:17
+ */
+
+/**
+
+ @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+
+ Single LoaderItem for registering data of each loadable element
+ @namespace window
+ @constructor
+ @class FSLoaderItem
+ @param {FSLoader} pRef The FSLoader owner of this item
+ @param {String} pStrPath The path for loading
+ @param {Object} pObjOptions Options for this individual loading
  */
 window.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
     "use strict";
@@ -759,9 +782,15 @@ window.FSLoader.prototype = {
  * Time: 17:32
  */
 
-/*
- * Object for controlling a queue of loadable items
- * */
+/**
+
+ @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+
+ @namespace window
+
+ @class FSLoaderQueue
+ @param {Object} pObjDefaultOptions The option for the queue.
+ */
 window.FSLoaderQueue = function (pObjDefaultOptions) {
     "use strict";
 

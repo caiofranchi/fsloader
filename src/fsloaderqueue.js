@@ -5,9 +5,15 @@
  * Time: 17:32
  */
 
-/*
- * Object for controlling a queue of loadable items
- * */
+/**
+
+ @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+
+ @namespace window
+
+ @class FSLoaderQueue
+ @param {Object} pObjDefaultOptions The option for the queue.
+ */
 window.FSLoaderQueue = function (pObjDefaultOptions) {
     "use strict";
 
