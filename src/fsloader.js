@@ -48,7 +48,7 @@
  @namespace window
 
  @class FSLoader
-
+ @param {Object} pObjDefaultOptions The option for the loader.
  */
 window.FSLoader = function (pObjDefaultOptions) { //pObjOptions = {container,onstart,onerror,oncomplete,type:swf|img|js|css,preventCache:true|false,onstartparams}
     "use strict";
@@ -109,7 +109,12 @@ window.FSLoader.prototype = {
     },
 
     //PRIVATE METHODS
-
+    /*
+     @private
+     @param {String} pStrURL The current URL
+     @param {Boolean} pPreventCache If the URL must be prevented from cache
+     @return {String} Evaluated URL
+     */
     evaluateURL: function (pStrURL, pPreventCache) {
         "use strict";
         if (pPreventCache === true) {
@@ -125,6 +130,12 @@ window.FSLoader.prototype = {
         }
     },
 
+    /**
+     * Method for detecting the best method for loading an element
+     * @private
+     * @param pStrType The string containing the file type
+     * @return {String} Returns the suggested loading type
+     */
     identifyLoadingType: function (pStrType) {
         "use strict";
         //if the file is a binary
@@ -148,6 +159,13 @@ window.FSLoader.prototype = {
         }
     },
 
+    /**
+     * Generate the element TAG based on file type
+     * @private
+     * @param pStrType The string containing the file type
+     * @param pStrPath Path for loading
+     * @return {Element} The created element
+     */
     generateTagByType: function (pStrType, pStrPath) {
         "use strict";
         switch (pStrType) {
@@ -164,7 +182,12 @@ window.FSLoader.prototype = {
         }
     },
 
-    //returns the file type for loading, based on file extension and recognized file types for loading
+    /**
+     * Get file type based on his extension's path
+     * @private
+     * @param pStrPath The URL path
+     * @return {String} The file type for loading, based on file extension and recognized file types for loading
+     */
     getFileType: function (pStrPath) {
         "use strict";
         var strExtension = FSLoaderHelpers.getFileExtension(pStrPath);
