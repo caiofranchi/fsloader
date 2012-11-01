@@ -92,7 +92,7 @@ function onQueueStart (){
 }
 
 function onQueueProgress () {
-    console.log(teste.progress);
+    console.log(this.progress+"--");
 }
 
 function onCompleteQueue () {

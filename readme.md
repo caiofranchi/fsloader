@@ -42,13 +42,34 @@ function onCompleteQueue () {
 
 ### PRELOADER
 
-### PRELOADER EVENTS
+```html
+<!-- SET THE ITEMS THAT YOU WANT TO PRELOAD WITH THE DATA TAG 'data-preload="true"' -->
+<img src="img/logo.png" data-preload="true" />
+```
+
+```html
+preload = new FSPreloader({onqueuecomplete: onCompleteQueue, onqueueprogress: onQueueProgress, ignoreErrors: true});
+preload.parseDocument({cssDependencies: true}); //cssDepencies:true parse the loaded CSS and load the background-images used
+
+preload.add("img/logo.png"); //add another item
+preload.start(); //start preloading
+
+function onQueueProgress () {
+    console.log(this.progress); //the total progress percentage of the loaded queue
+}
+
+function onCompleteQueue () {
+    console.log("PRELOAD COMPLETE");
+}
+
+```
+
 
 ## Features
 
 * Load both binary (Sound files, images) and text files (JSON, XML, TEXT, CSS, JAVASCRIPT, SVG, XML)
 * XHR2 ready
-* Lightweight (2KB) =)
+* Lightweight
 * Preloading
 * Lazy Loading
 * Queue Loading
