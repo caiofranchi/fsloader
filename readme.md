@@ -24,6 +24,27 @@ function onCompleteJquery(){
 }
 ```
 
+### LOADABLE FILE TYPES
+
+```html
+//FSLoaderHelpers.TYPE_CSS // DEFAULT
+//FSLoaderHelpers.TYPE_JAVASCRIPT : "script",
+//FSLoaderHelpers.TYPE_CSS : "css",
+//FSLoaderHelpers.TYPE_IMAGE : "image",
+//FSLoaderHelpers.TYPE_SOUND : "sound",
+//FSLoaderHelpers.TYPE_JSON : "json",
+//FSLoaderHelpers.TYPE_XML : "xml",
+//FSLoaderHelpers.TYPE_SVG : "svg",
+//FSLoaderHelpers.TYPE_TEXT : "text"
+
+var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
+
+function onCompleteImage(){
+    console.log(this.data);
+}
+```
+
 ### LOADING TYPES
 
 ```html
@@ -102,6 +123,33 @@ function onCompleteQueue () {
 
 ```
 
+### MIXING PRELOADER
+
+The FSPreloader Class extendes the FSLoaderQueue Class, that means that you can interact with a preloader almost like a queue.
+So, you can also add another items to preload that aren't on the DOM.
+
+```html
+preload = new FSPreloader({onqueuecomplete: onCompleteQueue, onqueueprogress: onQueueProgress});
+preload.parseDocument({cssDependencies: true});
+
+preload.add("img/logo.png"); //add another item
+preload.add("services/test.php", {id:"LoginService", myParam:"example", type:FSLoaderHelpers.TYPE_JSON, loadingType:FSLoaderHelpers.LOAD_AS_XHR}); //add a service
+
+preload.start(); //start preloading
+
+function onQueueProgress () {
+    console.log(this.progress); //the total progress percentage of the loaded queue
+}
+
+function onCompleteQueue () {
+    console.log("PRELOAD COMPLETE");
+
+    //getting an specific item by ID, if specified on loading
+    var item = preload.get("LoginService"); //return a FSLoaderItem, feel free to manipulate it =)
+    console.log(item.data);
+}
+
+```
 
 ## Contributing
 
