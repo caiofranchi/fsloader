@@ -2,7 +2,16 @@
 
  A complete and lightweight(~14kb) lib for single loading, queue loading and preloading assets.
 
-## Quick start
+## FEATURES
+
+* Load both binary (Sound files, images) and text files (JSON, XML, TEXT, CSS, JAVASCRIPT, SVG, XML)
+* XHR2 ready
+* Lightweight
+* Preloading
+* Lazy Loading
+* Queue Loading
+
+## EXAMPLES
 
 ### SETTING UP A SIMPLE FS LOADER
 
@@ -24,7 +33,7 @@ function onCompleteJquery(){
 //FSLoaderHelpers.LOAD_AS_XHR
 
 var MainLoader = new FSLoader();
-MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, retries:3, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
 
 function onCompleteImage(){
     console.log(this.data);
@@ -94,18 +103,9 @@ function onCompleteQueue () {
 ```
 
 
-## Features
-
-* Load both binary (Sound files, images) and text files (JSON, XML, TEXT, CSS, JAVASCRIPT, SVG, XML)
-* XHR2 ready
-* Lightweight
-* Preloading
-* Lazy Loading
-* Queue Loading
-
 ## Contributing
 
-Not yet, but soon =)
+Feel free to fork and add issues =)
 
 
 ## Project information
@@ -114,11 +114,3 @@ Not yet, but soon =)
 
 ## License
 
-### Major components:
-
-* Boiler Plate
-* Normalize.css: Public Domain
-
-### Everything else:
-
-The Unlicense (aka: public domain)
