@@ -11,11 +11,40 @@ var MainLoader = new FSLoader();
 MainLoader.load("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",{oncomplete:onCompleteJquery});
 
 function onCompleteJquery(){
-    //this.element
+    console.log(this.data);
 }
 ```
 
-### SINGLE ITEM EVENTS
+### LOADING TYPES
+
+```html
+//FSLoaderHelpers.LOAD_AS_TAGS // DEFAULT
+//FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER
+//FSLoaderHelpers.LOAD_AS_BLOB
+//FSLoaderHelpers.LOAD_AS_XHR
+
+var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, retries:3, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
+
+function onCompleteImage(){
+    console.log(this.data);
+}
+```
+
+### RETRIES
+
+```html
+var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, onerror:onErrorLoadingImage, retries:3});
+
+function onCompleteImage() {
+    console.log(this.data);
+}
+
+function onErrorLoadingImage() {
+    console.log("ERRO LOADING"+this);
+}
+```
 
 ### SETTING UP A QUEUE
 
