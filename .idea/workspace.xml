@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0a1f3231-d3ae-48ad-8d47-78b62e52178a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fsloader.js" afterPath="$PROJECT_DIR$/src/fsloader.js" />
     </list>
     <ignored path="fsloader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +28,10 @@
       <file leaf-file-name="fsloader.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fsloader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="503" column="49" selection-start="17565" selection-end="17565" vertical-scroll-proportion="0.47910863">
-              <folding />
+            <state line="41" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.09610028">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,10 +151,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Errors" />
     <property name="recentsLimit" value="5" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugSession" factoryName="Local" temporary="true">
@@ -289,7 +292,11 @@
       <created>1351804922003</created>
       <updated>1351804922003</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Working on docs">
+      <created>1352406946262</created>
+      <updated>1352406946262</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -452,7 +459,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fsloader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="503" column="49" selection-start="17565" selection-end="17565" vertical-scroll-proportion="0.47910863" />
+        <state line="41" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.09610028">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

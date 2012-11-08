@@ -72,6 +72,7 @@ window.FSLoader = function (pObjDefaultOptions) { //pObjOptions = {container,ons
         this.containerElement.id = "divContainerFSLoader";
         this.containerElement.style.display = "none";
         document.body.appendChild(this.containerElement);
+        //TODO: get namespace for acess document.body
     }
 };
 
