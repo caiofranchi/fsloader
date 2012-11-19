@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0a1f3231-d3ae-48ad-8d47-78b62e52178a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/fsloader-0.1.js" afterPath="$PROJECT_DIR$/build/fsloader-0.1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/fsloader-0.1.min.js" afterPath="$PROJECT_DIR$/build/fsloader-0.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/FSLoader.html" afterPath="$PROJECT_DIR$/docs/FSLoader.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/FSLoaderHelpers.html" afterPath="$PROJECT_DIR$/docs/FSLoaderHelpers.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/global.html" afterPath="$PROJECT_DIR$/docs/global.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/index.html" afterPath="$PROJECT_DIR$/examples/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fsloader.js" afterPath="$PROJECT_DIR$/src/fsloader.js" />
     </list>
     <ignored path="fsloader.iws" />
@@ -28,10 +35,26 @@
       <file leaf-file-name="fsloader.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fsloader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.09610028">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="25" column="24" selection-start="848" selection-end="848" vertical-scroll-proportion="0.73656845">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fsloaderitem.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fsloaderitem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="18" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="-26.115385">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,18 +81,18 @@
         <option value="$PROJECT_DIR$/src/fsloaderhelpers.js" />
         <option value="$PROJECT_DIR$/src/fsloaderqueue.js" />
         <option value="$PROJECT_DIR$/src/fsloaderitem.js" />
-        <option value="$PROJECT_DIR$/examples/index.html" />
         <option value="$PROJECT_DIR$/examples/js/script.js" />
         <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/examples/index.html" />
         <option value="$PROJECT_DIR$/src/fsloader.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="916" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -141,6 +164,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fsloader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="compiler" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,10 +347,14 @@
       <created>1352406946262</created>
       <updated>1352406946262</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- Working on docs">
+      <created>1352407769780</created>
+      <updated>1352407769780</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -320,14 +375,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1456" height="916" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845744" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32845744" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20112915" sideWeight="0.21825397" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20112915" sideWeight="0.6706349" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15023722" sideWeight="0.671875" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -382,7 +437,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Working on docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Changing class structure and doing docs" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -397,6 +452,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="- Commit inicial" />
     <MESSAGE value="- Working on docs" />
+    <MESSAGE value="- Changing class structure and doing docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -422,24 +478,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fsloaderitem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="105" selection-end="105" vertical-scroll-proportion="0.023776224" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compiler/compile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="75" selection-start="495" selection-end="495" vertical-scroll-proportion="-0.6181818" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="25" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.2367688" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="109" selection-start="1960" selection-end="2067" vertical-scroll-proportion="0.5086705" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -457,12 +498,31 @@
         <state line="7" column="0" selection-start="102" selection-end="277" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="2196" selection-end="2196" vertical-scroll-proportion="-26.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fsloaderitem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="18" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compiler/compile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="41" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.4098737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fsloader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.09610028">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state line="25" column="24" selection-start="848" selection-end="848" vertical-scroll-proportion="0.73656845">
+          <folding />
         </state>
       </provider>
     </entry>

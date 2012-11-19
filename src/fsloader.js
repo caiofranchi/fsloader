@@ -40,48 +40,104 @@
 /*jslint browser: true*/
 /*global document,console,StringUtils*/
 
-//TODO: Transform class into MODULE pattern
-/**
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
+} else {
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
+}
 
- @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
-
- @namespace window
-
- @class FSLoader
- @param {Object} pObjDefaultOptions The option for the loader.
- */
-window.FSLoader = function (pObjDefaultOptions) { //pObjOptions = {container,onstart,onerror,oncomplete,type:swf|img|js|css,preventCache:true|false,onstartparams}
+(function(pNamespace) {
     "use strict";
-    // VARS
-    this.currentLoading = false;
-    this.items = [ ];
-    this.options = { };
-    this.currentRequest = undefined;
 
-    //SET DEFAULTS
+    var CUR_NAMESPACE = pNamespace;
+    /**
+     * @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+     * @class FSLoader
+     * @param pObjDefaultOptions The option for the loader.
+     * @constructor
+     */
+    CUR_NAMESPACE.FSLoader = function (pObjDefaultOptions) {
+        this.currentLoading = false;
+        this.items = [ ];
+        this.options = { };
+        this.currentRequest = undefined;
 
-    if (pObjDefaultOptions !== undefined) {
-        this.options = pObjDefaultOptions;
+        //SET DEFAULTS
+
+        if (pObjDefaultOptions !== undefined) {
+            this.options = pObjDefaultOptions;
+        }
+
+        // set the default container
+        if (this.options !== undefined && this.options.container !== undefined) {
+            this.containerElement = this.options.container;
+        } else {
+            this.containerElement = document.createElement("div");
+            this.containerElement.id = "divContainerFSLoader";
+            this.containerElement.style.display = "none";
+            document.body.appendChild(this.containerElement);
+            //TODO: get namespace for acess document.body
+        }
     }
 
-    // set the default container
-    if (this.options !== undefined && this.options.container !== undefined) {
-        this.containerElement = this.options.container;
-    } else {
-        this.containerElement = document.createElement("div");
-        this.containerElement.id = "divContainerFSLoader";
-        this.containerElement.style.display = "none";
-        document.body.appendChild(this.containerElement);
-        //TODO: get namespace for acess document.body
-    }
-};
+    var proto = CUR_NAMESPACE.FSLoader.prototype;
 
-window.FSLoader.prototype = {
+    //PUBLIC PROPERTIES
+
+    /**
+     * @property currentLoading
+     * @type {Boolean}
+     * @default false
+     */
+    proto.currentLoading = false;
+
+    /**
+     * @property items
+     * @type {Array[FSLoaderItem]}
+     * @default
+     */
+    proto.items = [];
+
+    /**
+     * @property options
+     * @type {Object}
+     * @default null
+     */
+    proto.options = null;
+
+
+    //PRIVATE PROPERTIES
+
+    /**
+     * @property currentRequest
+     * @private
+     * @type {XMLHttpRequest}
+     * @default null
+     */
+    proto.currentRequest = null;
+
+    /**
+     * @property containerElement
+     * @private
+     * @type {HTMLElement}
+     * @default undefined
+     */
+    proto.containerElement = undefined;
 
     //PUBLIC METHODS
 
-    //load a single element
-    load: function (pStrPath, pObjOptions, pAutoLoad) {
+    /**
+     * Load a single element
+     * @param pStrPath
+     * @param pObjOptions
+     * @param pAutoLoad
+     * @return {FSLoaderItem}
+     */
+    proto.load = function (pStrPath, pObjOptions, pAutoLoad) {
         "use strict";
         var strType;
 
@@ -91,23 +147,23 @@ window.FSLoader.prototype = {
         this.items.push(currentItem);
 
         if (pAutoLoad === undefined || pAutoLoad === true) {
-           this.executeLoad(currentItem);
+            this.executeLoad(currentItem);
         }
 
         return currentItem;
-    },
+    }
 
     //get element by id
-    get: function (pValue) {
+    proto.get = function (pValue) {
         "use strict";
         return this.getElementByAttribute("id", pValue);
-    },
+    }
 
     //get element by attribute
-    getElementByAttribute: function (pAttribute, pValue) {
+    proto.getElementByAttribute = function (pAttribute, pValue) {
         "use strict";
         return this.items[this.items.indexByObjectValue(pAttribute, pValue)];
-    },
+    }
 
     //PRIVATE METHODS
     /*
@@ -116,7 +172,8 @@ window.FSLoader.prototype = {
      @param {Boolean} pPreventCache If the URL must be prevented from cache
      @return {String} Evaluated URL
      */
-    evaluateURL: function (pStrURL, pPreventCache) {
+
+    proto.evaluateURL = function (pStrURL, pPreventCache) {
         "use strict";
         if (pPreventCache === true) {
             var newUrl;
@@ -129,7 +186,7 @@ window.FSLoader.prototype = {
         } else {
             return pStrURL;
         }
-    },
+    }
 
     /**
      * Method for detecting the best method for loading an element
@@ -137,7 +194,7 @@ window.FSLoader.prototype = {
      * @param pStrType The string containing the file type
      * @return {String} Returns the suggested loading type
      */
-    identifyLoadingType: function (pStrType) {
+    proto.identifyLoadingType = function (pStrType) {
         "use strict";
         //if the file is a binary
         if (FSLoaderHelpers.isBinary(pStrType) === true) {
@@ -158,7 +215,7 @@ window.FSLoader.prototype = {
                 return FSLoaderHelpers.LOAD_AS_TAGS;
             }
         }
-    },
+    }
 
     /**
      * Generate the element TAG based on file type
@@ -167,21 +224,21 @@ window.FSLoader.prototype = {
      * @param pStrPath Path for loading
      * @return {Element} The created element
      */
-    generateTagByType: function (pStrType, pStrPath) {
+    proto.generateTagByType = function (pStrType, pStrPath) {
         "use strict";
         switch (pStrType) {
-        case FSLoaderHelpers.TYPE_CSS:
-            return this.createCssTag(pStrPath);
-        case FSLoaderHelpers.TYPE_JAVASCRIPT:
-            return this.createJavascriptTag(pStrPath);
-        case FSLoaderHelpers.TYPE_IMAGE:
-            return this.createImageTag(pStrPath);
-        case FSLoaderHelpers.TYPE_SVG:
-            return this.createSVGTag(pStrPath);
-        case FSLoaderHelpers.TYPE_SOUND:
-            return this.createSoundTag(pStrPath);
+            case FSLoaderHelpers.TYPE_CSS:
+                return this.createCssTag(pStrPath);
+            case FSLoaderHelpers.TYPE_JAVASCRIPT:
+                return this.createJavascriptTag(pStrPath);
+            case FSLoaderHelpers.TYPE_IMAGE:
+                return this.createImageTag(pStrPath);
+            case FSLoaderHelpers.TYPE_SVG:
+                return this.createSVGTag(pStrPath);
+            case FSLoaderHelpers.TYPE_SOUND:
+                return this.createSoundTag(pStrPath);
         }
-    },
+    }
 
     /**
      * Get file type based on his extension's path
@@ -189,36 +246,36 @@ window.FSLoader.prototype = {
      * @param pStrPath The URL path
      * @return {String} The file type for loading, based on file extension and recognized file types for loading
      */
-    getFileType: function (pStrPath) {
+    proto.getFileType = function (pStrPath) {
         "use strict";
         var strExtension = FSLoaderHelpers.getFileExtension(pStrPath);
 
         switch (strExtension) {
-        case "ogg":
-        case "mp3":
-        case "wav":
-            return FSLoaderHelpers.TYPE_SOUND;
-        case "jpeg":
-        case "jpg":
-        case "gif":
-        case "png":
-            return FSLoaderHelpers.TYPE_IMAGE;
-        case "json":
-            return FSLoaderHelpers.TYPE_JSON;
-        case "xml":
-            return FSLoaderHelpers.TYPE_XML;
-        case "css":
-            return FSLoaderHelpers.TYPE_CSS;
-        case "js":
-            return FSLoaderHelpers.TYPE_JAVASCRIPT;
-        case 'svg':
-            return FSLoaderHelpers.TYPE_SVG;
-        default:
-            return FSLoaderHelpers.TYPE_TEXT;
+            case "ogg":
+            case "mp3":
+            case "wav":
+                return FSLoaderHelpers.TYPE_SOUND;
+            case "jpeg":
+            case "jpg":
+            case "gif":
+            case "png":
+                return FSLoaderHelpers.TYPE_IMAGE;
+            case "json":
+                return FSLoaderHelpers.TYPE_JSON;
+            case "xml":
+                return FSLoaderHelpers.TYPE_XML;
+            case "css":
+                return FSLoaderHelpers.TYPE_CSS;
+            case "js":
+                return FSLoaderHelpers.TYPE_JAVASCRIPT;
+            case 'svg':
+                return FSLoaderHelpers.TYPE_SVG;
+            default:
+                return FSLoaderHelpers.TYPE_TEXT;
         }
-    },
+    }
 
-    createJavascriptTag: function (pStrPath) {
+    proto.createJavascriptTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("script");
 
@@ -227,9 +284,9 @@ window.FSLoader.prototype = {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    },
+    }
 
-    createSVGTag: function (pStrPath) {
+    proto.createSVGTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("object");
 
@@ -238,9 +295,9 @@ window.FSLoader.prototype = {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    },
+    }
 
-    createSoundTag: function (pStrPath) {
+    proto.createSoundTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("audio");
 
@@ -249,9 +306,9 @@ window.FSLoader.prototype = {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    },
+    }
 
-    createCssTag: function (pStrPath) {
+    proto.createCssTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("link");
         //setup element
@@ -260,9 +317,9 @@ window.FSLoader.prototype = {
         elScript.setAttribute("href", pStrPath);
 
         return elScript;
-    },
+    }
 
-    createImageTag: function (pStrPath) {
+    proto.createImageTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("img");
 
@@ -270,9 +327,9 @@ window.FSLoader.prototype = {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    },
+    }
 
-    executeLoad: function (pFSLoaderItem) {
+    proto.executeLoad = function (pFSLoaderItem) {
         "use strict";
 
         //refresh FSLoaderItem
@@ -314,21 +371,21 @@ window.FSLoader.prototype = {
 
             //console.log(elScript.readyState+"rdyStateFora");
             /*if (elScript.readyState !== undefined) {  //IE7+
-                elScript.onreadystatechange = function () {
-                   //console.log(elScript.readyState+"rdyState");
-                   if (elScript.readyState === "loaded" || elScript.readyState === "complete") {
-                       elScript.onreadystatechange = null;
-                       //if(onCompleteCallback) onCompleteCallback();
-                       //console.log(elScript.readyState+"rdyState");
-                       this.onItemLoadComplete.apply(pFSLoaderItem);
-                   } else if (elScript.readyState === "loaded") {
-                       this.onItemLoadError.apply(pFSLoaderItem);
-                   }
-                };
-            } else {
-                elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
-                elScript.addEventListener("error", this.onItemLoadError.bind(pFSLoaderItem), false);
-            }*/
+             elScript.onreadystatechange = function () {
+             //console.log(elScript.readyState+"rdyState");
+             if (elScript.readyState === "loaded" || elScript.readyState === "complete") {
+             elScript.onreadystatechange = null;
+             //if(onCompleteCallback) onCompleteCallback();
+             //console.log(elScript.readyState+"rdyState");
+             this.onItemLoadComplete.apply(pFSLoaderItem);
+             } else if (elScript.readyState === "loaded") {
+             this.onItemLoadError.apply(pFSLoaderItem);
+             }
+             };
+             } else {
+             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
+             elScript.addEventListener("error", this.onItemLoadError.bind(pFSLoaderItem), false);
+             }*/
 
             //setup event
             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
@@ -388,10 +445,10 @@ window.FSLoader.prototype = {
         }
 
         return false;
-    },
+    }
 
     //returns a FSLoaderItem configured
-    generateLoaderItem: function (pStrPath, pObjOptions) {
+    proto.generateLoaderItem = function (pStrPath, pObjOptions) {
         "use strict";
         var objLoaderItem = new FSLoaderItem(this, pStrPath, pObjOptions);
 
@@ -411,7 +468,7 @@ window.FSLoader.prototype = {
     },
 
     //function to remove listeners from the current element
-    removeEventsFromElement: function (pEl) {
+    proto.removeEventsFromElement = function (pEl) {
         "use strict";
         pEl.removeEventListener('load', this.onItemLoadComplete);
         pEl.removeEventListener('error', this.onItemLoadError);
@@ -421,7 +478,7 @@ window.FSLoader.prototype = {
     //INTERNAL EVENTS
 
     //internal event on complete
-    onItemLoadComplete: function (event) {
+    proto.onItemLoadComplete = function (event) {
         "use strict";
         this.state = FSLoaderHelpers.STATE_FINISHED;
         this.progress = 100;
@@ -453,10 +510,10 @@ window.FSLoader.prototype = {
         }
         //removing events from the element
         this.reference.removeEventsFromElement(this.element);
-    },
+    }
 
     //internal event on error
-    onItemLoadProgress: function (event) {
+    proto.onItemLoadProgress = function (event) {
         "use strict";
         //prevent blank
         if (event.loaded > 0 && event.total === 0) {
@@ -480,10 +537,10 @@ window.FSLoader.prototype = {
                 this.options.onprogress.apply(this);
             }
         }
-    },
+    }
 
     //internal event on error
-    onItemLoadError: function (event) {
+    proto.onItemLoadError = function (event) {
         "use strict";
 
         //removing events from the element
@@ -518,4 +575,5 @@ window.FSLoader.prototype = {
             }
         }
     }
-};
+
+} (F_NAMESPACE));
