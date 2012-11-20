@@ -1,61 +1,97 @@
-/**
- * Created with JetBrains WebStorm.
- * Author: Caio Franchi
- * Date: 02/10/12
- * Time: 11:51
- */
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
+} else {
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
+}
 
-/**
-
- @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
-
- @namespace window
-
- @class FSLoaderHelpers
-
- */
 window.URL = window.URL || window.webkitURL;
-window.FSLoaderHelpers = {
+
+(function(pNamespace) {
+    "use strict";
+
+    var NS = pNamespace;
+
+
+    /**
+     * Helper class for manipulate data on FSLoader. (Do not instantiate)
+     * @static
+     * @class
+     * @constructor
+     * @throws {SyntaxError} Do not instantiate a static class
+     */
+    NS.FSLoaderHelpers = function () {
+        throw new Error("Do not instantiate a static class");
+    }
+
 
     //LOADING TYPES
-    LOAD_AS_TAGS : "tag",
-    LOAD_AS_XHR : "xhr",
-    LOAD_AS_BLOB : "blob",
-    LOAD_AS_ARRAY_BUFFER : "arraybuffer",
-    DEFAULT_LOAD_TYPE : "tag",
+
+    /**
+     * @property LOAD_AS_TAGS
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_TAGS = "tag";
+
+    /**
+     * @property LOAD_AS_XHR
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_XHR = "xhr";
+
+    /**
+     * @property LOAD_AS_BLOB
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_BLOB = "blob";
+
+    /**
+     * @property LOAD_AS_BLOB
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER = "arraybuffer";
+    NS.FSLoaderHelpers.DEFAULT_LOAD_TYPE = "tag";
 
     //LOAD METHODS
-    METHOD_GET : "GET",
-    METHOD_POST : "POST",
+    NS.FSLoaderHelpers.METHOD_GET = "GET";
+    NS.FSLoaderHelpers.METHOD_POST = "POST";
 
     //LOADER TYPES (read-only)
-    TYPE_JAVASCRIPT : "script",
-    TYPE_CSS : "css",
-    TYPE_IMAGE : "image",
-    TYPE_SOUND : "sound",
-    TYPE_JSON : "json",
-    TYPE_XML : "xml",
-    TYPE_SVG : "svg",
-    TYPE_TEXT : "text",
+    NS.FSLoaderHelpers.TYPE_JAVASCRIPT = "script";
+    NS.FSLoaderHelpers.TYPE_CSS = "css";
+    NS.FSLoaderHelpers.TYPE_IMAGE = "image";
+    NS.FSLoaderHelpers.TYPE_SOUND = "sound";
+    NS.FSLoaderHelpers.TYPE_JSON = "json";
+    NS.FSLoaderHelpers.TYPE_XML = "xml";
+    NS.FSLoaderHelpers.TYPE_SVG = "svg";
+    NS.FSLoaderHelpers.TYPE_TEXT = "text";
 
-    FILE_TYPE_TEXT : "text",
-    FILE_TYPE_BINARY : "binary",
+    NS.FSLoaderHelpers.FILE_TYPE_TEXT = "text";
+    NS.FSLoaderHelpers.FILE_TYPE_BINARY = "binary";
 
     //LOADING STATES (read-only)
-    STATE_UNLOADED : "unloaded",
-    STATE_STARTED : "started",
-    STATE_LOADING : "loading",
-    STATE_FINISHED : "complete",
-    STATE_ERROR : "error",
+    NS.FSLoaderHelpers.STATE_UNLOADED = "unloaded";
+    NS.FSLoaderHelpers.STATE_STARTED = "started";
+    NS.FSLoaderHelpers.STATE_LOADING = "loading";
+    NS.FSLoaderHelpers.STATE_FINISHED = "complete";
+    NS.FSLoaderHelpers.STATE_ERROR = "error";
 
     //OPTIONS
-    REGISTERED_LOADER_OPTIONS : ["id", "preventCache", "container"],
-    REGISTERED_QUEUE_OPTIONS : ["id", "preventCache", "container", "ignoreErrors", "onitemerror", "onitemerrorparams", "onitemcomplete", "onitemcompleteparams", "onitemstart", "onitemstartparams", "onqueueerror", "onqueueerrorparams", "onqueuecomplete", "onqueuecompleteparams", "onqueueprogress", "onqueueprogressparams"],
-    REGISTERED_ITEM_OPTIONS : ["id", "preventCache", "method", "type", "onstart", "onstartparams", "onerror", "onerrorparams", "oncomplete", "oncompleteparams"],
-    MERGE_OPTIONS : ["preventCache"],
-
-    //Registered internal modules
-    MODULE_BASE : "js/franchistein/",
+    NS.FSLoaderHelpers.REGISTERED_LOADER_OPTIONS = ["id", "preventCache", "container"];
+    NS.FSLoaderHelpers.REGISTERED_QUEUE_OPTIONS = ["id", "preventCache", "container", "ignoreErrors", "onitemerror", "onitemerrorparams", "onitemcomplete", "onitemcompleteparams", "onitemstart", "onitemstartparams", "onqueueerror", "onqueueerrorparams", "onqueuecomplete", "onqueuecompleteparams", "onqueueprogress", "onqueueprogressparams"];
+    NS.FSLoaderHelpers.REGISTERED_ITEM_OPTIONS = ["id", "preventCache", "method", "type", "onstart", "onstartparams", "onerror", "onerrorparams", "oncomplete", "oncompleteparams"];
+    NS.FSLoaderHelpers.MERGE_OPTIONS = ["preventCache"];
 
     /**
 
@@ -67,7 +103,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if binary and false if not
 
      */
-    isBinary: function (pStrType) {
+    NS.FSLoaderHelpers.isBinary = function (pStrType) {
         "use strict";
         switch (pStrType) {
             case FSLoaderHelpers.TYPE_IMAGE:
@@ -76,7 +112,7 @@ window.FSLoaderHelpers = {
             default:
                 return false;
         };
-    },
+    };
 
     /**
 
@@ -88,12 +124,12 @@ window.FSLoaderHelpers = {
      @returns {String} returns the file extension
 
      */
-    getFileExtension: function (pStrPath) {
+    NS.FSLoaderHelpers.getFileExtension = function (pStrPath) {
         "use strict";
         return pStrPath.split('.').pop();
-    },
+    };
 
-    identifyTagType: function (pHTMLElement) {
+    NS.FSLoaderHelpers.identifyTagType = function (pHTMLElement) {
         "use strict";
         switch (pHTMLElement.tagName.toUpperCase()) {
             case "IMG":
@@ -106,7 +142,7 @@ window.FSLoaderHelpers = {
                 return {tag:pHTMLElement, path:pHTMLElement.src, type:FSLoaderHelpers.TYPE_JAVASCRIPT};
                 break;
         };
-    },
+    };
 
     /**
 
@@ -119,7 +155,7 @@ window.FSLoaderHelpers = {
      @returns {Array} returns a array of founded values for the specific rule
 
      */
-    findRule: function (pCssRuleList, pRule) {
+    NS.FSLoaderHelpers.findRule = function (pCssRuleList, pRule) {
         if (pCssRuleList === null) return [];
         var i,
             total= pCssRuleList.length,
@@ -141,7 +177,7 @@ window.FSLoaderHelpers = {
         }
 
         return arrFound;
-    },
+    };
 
     /**
 
@@ -153,7 +189,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if binary and false if not
 
      */
-    isData: function(pStrType) {
+    NS.FSLoaderHelpers.isData = function(pStrType) {
         "use strict";
         switch (pStrType) {
             case FSLoaderHelpers.TYPE_JSON:
@@ -163,7 +199,7 @@ window.FSLoaderHelpers = {
             default:
                 return false;
         };
-    },
+    };
 
     /**
 
@@ -175,10 +211,10 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns the Blob URL
 
      */
-    getURLByBlob: function (pObjBlob) {
+    NS.FSLoaderHelpers.getURLByBlob = function (pObjBlob) {
         "use strict";
         return window.URL.createObjectURL(pObjBlob);
-    },
+    };
 
     /**
 
@@ -188,7 +224,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if supports and false if not
 
      */
-    isXHR2Supported: function () {
+    NS.FSLoaderHelpers.isXHR2Supported = function () {
         var xhr = new XMLHttpRequest;
 
         return (
@@ -201,5 +237,6 @@ window.FSLoaderHelpers = {
                 )
 
             );
-    }
-};
+    };
+
+} (F_NAMESPACE));

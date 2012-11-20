@@ -41,9 +41,9 @@ else:
 
 
 # RE-GEN JS DOCS
-    if len(sys.argv)  == 3 :
-        if sys.argv[2] == 'with-docs':
-            subprocess.call('cd jsdocs/ & jsdoc ../../src/ -d ../../docs/ --recurse --verbose', shell=True);
+if len(sys.argv)  == 3 :
+    if sys.argv[2] == 'with-docs':
+        subprocess.call('cd jsdocs/ & jsdoc ../../src/ -d ../../docs/ --recurse --verbose', shell=True);
 
 #reading the .js archives
 archives = []

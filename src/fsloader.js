@@ -1,22 +1,4 @@
-/**
- * FSLoader - A simple and user-friendly script for lazy loading assets on the fly and also for preloading then.
- * Author: Caio Franchi
- * Date: 20/09/12
- * Last Update: 24/09/2012
- * Time: 12:45
- * Version:  0.1b
- * Dependencies: utils/StringUtils, polyfills/function.js
- * Usage:
- * //generic loading
- * //javascript loading
- * //css loading
- * //image loading
- *
- * //queue loading
- *
- * //using for preloading assets for your sites
- *
- *
+/*
  Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
 
  Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -37,6 +19,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
  */
+
 /*jslint browser: true*/
 /*global document,console,StringUtils*/
 
@@ -53,14 +36,19 @@ if (this.fs) {
 (function(pNamespace) {
     "use strict";
 
-    var CUR_NAMESPACE = pNamespace;
+    var NS = pNamespace;
+
     /**
+     * FSLoader - A simple and user-friendly script for lazy loading assets on the fly and also for preloading then.
      * @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
      * @class FSLoader
-     * @param pObjDefaultOptions The option for the loader.
+     * @param {Object} [pObjDefaultOptions] The option for the loader.
+     * @param {DOMElement} [pObjDefaultOptions.container]
+     * @param {Boolean} [pObjDefaultOptions.preventCache]
+     * @param {String} [pObjDefaultOptions.id]
      * @constructor
      */
-    CUR_NAMESPACE.FSLoader = function (pObjDefaultOptions) {
+    NS.FSLoader = function (pObjDefaultOptions) {
         this.currentLoading = false;
         this.items = [ ];
         this.options = { };
@@ -76,15 +64,18 @@ if (this.fs) {
         if (this.options !== undefined && this.options.container !== undefined) {
             this.containerElement = this.options.container;
         } else {
-            this.containerElement = document.createElement("div");
-            this.containerElement.id = "divContainerFSLoader";
-            this.containerElement.style.display = "none";
-            document.body.appendChild(this.containerElement);
-            //TODO: get namespace for acess document.body
+            if(document) {
+                this.containerElement = document.createElement("div");
+                this.containerElement.id = "divContainerFSLoader";
+                this.containerElement.style.display = "none";
+                document.body.appendChild(this.containerElement);
+            } else {
+                throw new Error("Document is not available. Please pass a valid containerElement.");
+            }
         }
-    }
+    };
 
-    var proto = CUR_NAMESPACE.FSLoader.prototype;
+    var proto = NS.FSLoader.prototype;
 
     //PUBLIC PROPERTIES
 
@@ -122,7 +113,6 @@ if (this.fs) {
 
     /**
      * @property containerElement
-     * @private
      * @type {HTMLElement}
      * @default undefined
      */
@@ -132,9 +122,22 @@ if (this.fs) {
 
     /**
      * Load a single element
+     * @function
+     * @public
      * @param pStrPath
-     * @param pObjOptions
-     * @param pAutoLoad
+     * @param {Object} [pObjOptions]
+     * @param {String} [pObjOptions.id] An ID for easy get the current item
+     * @param {Boolean} [pObjOptions.preventCache = false]
+     * @param {String} [pObjOptions.type = "auto"]  FSLoaderHelpers.TYPE_JAVASCRIPT, FSLoaderHelpers.TYPE_CSS, FSLoaderHelpers.TYPE_IMAGE, FSLoaderHelpers.TYPE_SOUND, FSLoaderHelpers.TYPE_JSON, FSLoaderHelpers.TYPE_XML, FSLoaderHelpers.TYPE_SVG, FSLoaderHelpers.TYPE_TEXT
+     * @param {String} [pObjOptions.loadingType = "tag"] FSLoaderHelpers.LOAD_AS_TAGS, LOAD_AS_XHR, FSLoaderHelpers.LOAD_AS_BLOB and LOAD_AS_ARRAY_BUFFER
+     * @param {String} [pObjOptions.method] POST OR GET
+     * @param {Function} [pObjOptions.onstart]
+     * @param {Array} [pObjOptions.onstartparams]
+     * @param {Function} [pObjOptions.onerror]
+     * @param {Array} [pObjOptions.onerrorparams]
+     * @param {Function} [pObjOptions.oncomplete]
+     * @param {Array} [pObjOptions.oncompleteparams]
+     * @param {Boolean} [pAutoLoad=true]
      * @return {FSLoaderItem}
      */
     proto.load = function (pStrPath, pObjOptions, pAutoLoad) {
@@ -151,19 +154,19 @@ if (this.fs) {
         }
 
         return currentItem;
-    }
+    };
 
     //get element by id
     proto.get = function (pValue) {
         "use strict";
         return this.getElementByAttribute("id", pValue);
-    }
+    };
 
     //get element by attribute
     proto.getElementByAttribute = function (pAttribute, pValue) {
         "use strict";
         return this.items[this.items.indexByObjectValue(pAttribute, pValue)];
-    }
+    };
 
     //PRIVATE METHODS
     /*
@@ -186,7 +189,7 @@ if (this.fs) {
         } else {
             return pStrURL;
         }
-    }
+    };
 
     /**
      * Method for detecting the best method for loading an element
@@ -197,25 +200,25 @@ if (this.fs) {
     proto.identifyLoadingType = function (pStrType) {
         "use strict";
         //if the file is a binary
-        if (FSLoaderHelpers.isBinary(pStrType) === true) {
-            if (FSLoaderHelpers.isXHR2Supported()) {
+        if (NS.FSLoaderHelpers.isBinary(pStrType) === true) {
+            if (NS.FSLoaderHelpers.isXHR2Supported()) {
                 //verify if its possible to load as XHR2 and return the BLOB
-                //return FSLoaderHelpers.LOAD_AS_XHR2;
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                //return NS.FSLoaderHelpers.LOAD_AS_XHR2;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             } else {
                 //if its not possible, load as tag
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             }
         } else {
             //if it text content
-            if (FSLoaderHelpers.isData(pStrType)) {
-                return FSLoaderHelpers.LOAD_AS_XHR;
+            if (NS.FSLoaderHelpers.isData(pStrType)) {
+                return NS.FSLoaderHelpers.LOAD_AS_XHR;
             } else {
                 //if its TAG (js, css, svg)
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             }
         }
-    }
+    };
 
     /**
      * Generate the element TAG based on file type
@@ -227,18 +230,18 @@ if (this.fs) {
     proto.generateTagByType = function (pStrType, pStrPath) {
         "use strict";
         switch (pStrType) {
-            case FSLoaderHelpers.TYPE_CSS:
+            case NS.FSLoaderHelpers.TYPE_CSS:
                 return this.createCssTag(pStrPath);
-            case FSLoaderHelpers.TYPE_JAVASCRIPT:
+            case NS.FSLoaderHelpers.TYPE_JAVASCRIPT:
                 return this.createJavascriptTag(pStrPath);
-            case FSLoaderHelpers.TYPE_IMAGE:
+            case NS.FSLoaderHelpers.TYPE_IMAGE:
                 return this.createImageTag(pStrPath);
-            case FSLoaderHelpers.TYPE_SVG:
+            case NS.FSLoaderHelpers.TYPE_SVG:
                 return this.createSVGTag(pStrPath);
-            case FSLoaderHelpers.TYPE_SOUND:
+            case NS.FSLoaderHelpers.TYPE_SOUND:
                 return this.createSoundTag(pStrPath);
         }
-    }
+    };
 
     /**
      * Get file type based on his extension's path
@@ -248,32 +251,32 @@ if (this.fs) {
      */
     proto.getFileType = function (pStrPath) {
         "use strict";
-        var strExtension = FSLoaderHelpers.getFileExtension(pStrPath);
+        var strExtension = NS.FSLoaderHelpers.getFileExtension(pStrPath);
 
         switch (strExtension) {
             case "ogg":
             case "mp3":
             case "wav":
-                return FSLoaderHelpers.TYPE_SOUND;
+                return NS.FSLoaderHelpers.TYPE_SOUND;
             case "jpeg":
             case "jpg":
             case "gif":
             case "png":
-                return FSLoaderHelpers.TYPE_IMAGE;
+                return NS.FSLoaderHelpers.TYPE_IMAGE;
             case "json":
-                return FSLoaderHelpers.TYPE_JSON;
+                return NS.FSLoaderHelpers.TYPE_JSON;
             case "xml":
-                return FSLoaderHelpers.TYPE_XML;
+                return NS.FSLoaderHelpers.TYPE_XML;
             case "css":
-                return FSLoaderHelpers.TYPE_CSS;
+                return NS.FSLoaderHelpers.TYPE_CSS;
             case "js":
-                return FSLoaderHelpers.TYPE_JAVASCRIPT;
+                return NS.FSLoaderHelpers.TYPE_JAVASCRIPT;
             case 'svg':
-                return FSLoaderHelpers.TYPE_SVG;
+                return NS.FSLoaderHelpers.TYPE_SVG;
             default:
-                return FSLoaderHelpers.TYPE_TEXT;
+                return NS.FSLoaderHelpers.TYPE_TEXT;
         }
-    }
+    };
 
     proto.createJavascriptTag = function (pStrPath) {
         "use strict";
@@ -284,7 +287,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createSVGTag = function (pStrPath) {
         "use strict";
@@ -295,7 +298,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createSoundTag = function (pStrPath) {
         "use strict";
@@ -306,7 +309,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createCssTag = function (pStrPath) {
         "use strict";
@@ -317,7 +320,7 @@ if (this.fs) {
         elScript.setAttribute("href", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createImageTag = function (pStrPath) {
         "use strict";
@@ -327,7 +330,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.executeLoad = function (pFSLoaderItem) {
         "use strict";
@@ -361,7 +364,7 @@ if (this.fs) {
 
 
         //LOAD ASSET AS TAG
-        if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_TAGS) {
+        if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_TAGS) {
 
             //load as tags
             var elScript = this.generateTagByType(pFSLoaderItem.type, this.evaluateURL(pFSLoaderItem.path, pFSLoaderItem.preventCache));
@@ -401,7 +404,7 @@ if (this.fs) {
                 throw new Error("Cannot appendChild script on the given container element.");
             };
 
-        } else if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_XHR || (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER)) {
+        } else if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR || (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER)) {
 
             //console.log(pFSLoaderItem);
             // Old IE versions use a different approach
@@ -416,7 +419,7 @@ if (this.fs) {
             }
 
             //IE9 doesn't support .overrideMimeType(), so we need to check for it.
-            if (pFSLoaderItem.type === FSLoaderHelpers.TYPE_TEXT &&  this.currentRequest.overrideMimeType) {
+            if (pFSLoaderItem.type === NS.FSLoaderHelpers.TYPE_TEXT &&  this.currentRequest.overrideMimeType) {
                 this.currentRequest.overrideMimeType('text/plain; charset=x-user-defined');
             }
 
@@ -425,11 +428,11 @@ if (this.fs) {
             this.currentRequest.send();
 
             //if xhr2 is supported and the file is binary
-            if (FSLoaderHelpers.isBinary(pFSLoaderItem.type) && FSLoaderHelpers.isXHR2Supported()) {
-                if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_BLOB) {
+            if (NS.FSLoaderHelpers.isBinary(pFSLoaderItem.type) && NS.FSLoaderHelpers.isXHR2Supported()) {
+                if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB) {
                     //if is Blob
                     this.currentRequest.responseType = 'blob';
-                } else if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
+                } else if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
                     //If is a array buffer
                     this.currentRequest.responseType = 'arraybuffer';
                 }
@@ -445,7 +448,7 @@ if (this.fs) {
         }
 
         return false;
-    }
+    };
 
     //returns a FSLoaderItem configured
     proto.generateLoaderItem = function (pStrPath, pObjOptions) {
@@ -465,7 +468,7 @@ if (this.fs) {
 
 
         return objLoaderItem;
-    },
+    };
 
     //function to remove listeners from the current element
     proto.removeEventsFromElement = function (pEl) {
@@ -473,26 +476,26 @@ if (this.fs) {
         pEl.removeEventListener('load', this.onItemLoadComplete);
         pEl.removeEventListener('error', this.onItemLoadError);
         pEl.removeEventListener('progress', this.onItemLoadProgress);
-    },
+    };
 
     //INTERNAL EVENTS
 
     //internal event on complete
     proto.onItemLoadComplete = function (event) {
         "use strict";
-        this.state = FSLoaderHelpers.STATE_FINISHED;
+        this.state = NS.FSLoaderHelpers.STATE_FINISHED;
         this.progress = 100;
-        if (this.reference.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || this.reference.loadingType === FSLoaderHelpers.LOAD_AS_XHR) {
+        if (this.reference.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || this.reference.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR) {
             //this.data =
             this.element = event.currentTarget;
         }
 
         //assign return data by type
-        if (this.loadingType === FSLoaderHelpers.LOAD_AS_TAGS) {
+        if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_TAGS) {
             this.data = this.element;
-        } else if (this.loadingType === FSLoaderHelpers.LOAD_AS_XHR) {
+        } else if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR) {
             this.data = event.currentTarget.response;
-        } else if (this.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || this.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
+        } else if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || this.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
             this.data = event.currentTarget.response;
         }
 
@@ -510,7 +513,7 @@ if (this.fs) {
         }
         //removing events from the element
         this.reference.removeEventsFromElement(this.element);
-    }
+    };
 
     //internal event on error
     proto.onItemLoadProgress = function (event) {
@@ -520,7 +523,7 @@ if (this.fs) {
             return;
         }
         //assign
-        this.state = FSLoaderHelpers.STATE_LOADING;
+        this.state = NS.FSLoaderHelpers.STATE_LOADING;
         this.bytesLoaded = event.loaded;
         this.bytesTotal =  event.total;
         this.progress = Math.round((100 * this.bytesLoaded) / this.bytesTotal);
@@ -537,7 +540,7 @@ if (this.fs) {
                 this.options.onprogress.apply(this);
             }
         }
-    }
+    };
 
     //internal event on error
     proto.onItemLoadError = function (event) {
@@ -559,7 +562,7 @@ if (this.fs) {
             //retries has ended, consider the error
 
             //assign
-            this.state = FSLoaderHelpers.STATE_ERROR;
+            this.state = NS.FSLoaderHelpers.STATE_ERROR;
 
             //if the item belongs to a queue, exec the callback
             if (this.queue !== undefined) {
@@ -574,6 +577,6 @@ if (this.fs) {
                 }
             }
         }
-    }
+    };
 
 } (F_NAMESPACE));

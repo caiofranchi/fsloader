@@ -1,61 +1,97 @@
-/**
- * Created with JetBrains WebStorm.
- * Author: Caio Franchi
- * Date: 02/10/12
- * Time: 11:51
- */
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
+} else {
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
+}
 
-/**
-
- @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
-
- @namespace window
-
- @class FSLoaderHelpers
-
- */
 window.URL = window.URL || window.webkitURL;
-window.FSLoaderHelpers = {
+
+(function(pNamespace) {
+    "use strict";
+
+    var NS = pNamespace;
+
+
+    /**
+     * Helper class for manipulate data on FSLoader. (Do not instantiate)
+     * @static
+     * @class
+     * @constructor
+     * @throws {SyntaxError} Do not instantiate a static class
+     */
+    NS.FSLoaderHelpers = function () {
+        throw new Error("Do not instantiate a static class");
+    }
+
 
     //LOADING TYPES
-    LOAD_AS_TAGS : "tag",
-    LOAD_AS_XHR : "xhr",
-    LOAD_AS_BLOB : "blob",
-    LOAD_AS_ARRAY_BUFFER : "arraybuffer",
-    DEFAULT_LOAD_TYPE : "tag",
+
+    /**
+     * @property LOAD_AS_TAGS
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_TAGS = "tag";
+
+    /**
+     * @property LOAD_AS_XHR
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_XHR = "xhr";
+
+    /**
+     * @property LOAD_AS_BLOB
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_BLOB = "blob";
+
+    /**
+     * @property LOAD_AS_BLOB
+     * @protected
+     * @static
+     * @type {String}
+     */
+    NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER = "arraybuffer";
+    NS.FSLoaderHelpers.DEFAULT_LOAD_TYPE = "tag";
 
     //LOAD METHODS
-    METHOD_GET : "GET",
-    METHOD_POST : "POST",
+    NS.FSLoaderHelpers.METHOD_GET = "GET";
+    NS.FSLoaderHelpers.METHOD_POST = "POST";
 
     //LOADER TYPES (read-only)
-    TYPE_JAVASCRIPT : "script",
-    TYPE_CSS : "css",
-    TYPE_IMAGE : "image",
-    TYPE_SOUND : "sound",
-    TYPE_JSON : "json",
-    TYPE_XML : "xml",
-    TYPE_SVG : "svg",
-    TYPE_TEXT : "text",
+    NS.FSLoaderHelpers.TYPE_JAVASCRIPT = "script";
+    NS.FSLoaderHelpers.TYPE_CSS = "css";
+    NS.FSLoaderHelpers.TYPE_IMAGE = "image";
+    NS.FSLoaderHelpers.TYPE_SOUND = "sound";
+    NS.FSLoaderHelpers.TYPE_JSON = "json";
+    NS.FSLoaderHelpers.TYPE_XML = "xml";
+    NS.FSLoaderHelpers.TYPE_SVG = "svg";
+    NS.FSLoaderHelpers.TYPE_TEXT = "text";
 
-    FILE_TYPE_TEXT : "text",
-    FILE_TYPE_BINARY : "binary",
+    NS.FSLoaderHelpers.FILE_TYPE_TEXT = "text";
+    NS.FSLoaderHelpers.FILE_TYPE_BINARY = "binary";
 
     //LOADING STATES (read-only)
-    STATE_UNLOADED : "unloaded",
-    STATE_STARTED : "started",
-    STATE_LOADING : "loading",
-    STATE_FINISHED : "complete",
-    STATE_ERROR : "error",
+    NS.FSLoaderHelpers.STATE_UNLOADED = "unloaded";
+    NS.FSLoaderHelpers.STATE_STARTED = "started";
+    NS.FSLoaderHelpers.STATE_LOADING = "loading";
+    NS.FSLoaderHelpers.STATE_FINISHED = "complete";
+    NS.FSLoaderHelpers.STATE_ERROR = "error";
 
     //OPTIONS
-    REGISTERED_LOADER_OPTIONS : ["id", "preventCache", "container"],
-    REGISTERED_QUEUE_OPTIONS : ["id", "preventCache", "container", "ignoreErrors", "onitemerror", "onitemerrorparams", "onitemcomplete", "onitemcompleteparams", "onitemstart", "onitemstartparams", "onqueueerror", "onqueueerrorparams", "onqueuecomplete", "onqueuecompleteparams", "onqueueprogress", "onqueueprogressparams"],
-    REGISTERED_ITEM_OPTIONS : ["id", "preventCache", "method", "type", "onstart", "onstartparams", "onerror", "onerrorparams", "oncomplete", "oncompleteparams"],
-    MERGE_OPTIONS : ["preventCache"],
-
-    //Registered internal modules
-    MODULE_BASE : "js/franchistein/",
+    NS.FSLoaderHelpers.REGISTERED_LOADER_OPTIONS = ["id", "preventCache", "container"];
+    NS.FSLoaderHelpers.REGISTERED_QUEUE_OPTIONS = ["id", "preventCache", "container", "ignoreErrors", "onitemerror", "onitemerrorparams", "onitemcomplete", "onitemcompleteparams", "onitemstart", "onitemstartparams", "onqueueerror", "onqueueerrorparams", "onqueuecomplete", "onqueuecompleteparams", "onqueueprogress", "onqueueprogressparams"];
+    NS.FSLoaderHelpers.REGISTERED_ITEM_OPTIONS = ["id", "preventCache", "method", "type", "onstart", "onstartparams", "onerror", "onerrorparams", "oncomplete", "oncompleteparams"];
+    NS.FSLoaderHelpers.MERGE_OPTIONS = ["preventCache"];
 
     /**
 
@@ -67,7 +103,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if binary and false if not
 
      */
-    isBinary: function (pStrType) {
+    NS.FSLoaderHelpers.isBinary = function (pStrType) {
         "use strict";
         switch (pStrType) {
             case FSLoaderHelpers.TYPE_IMAGE:
@@ -76,7 +112,7 @@ window.FSLoaderHelpers = {
             default:
                 return false;
         };
-    },
+    };
 
     /**
 
@@ -88,12 +124,12 @@ window.FSLoaderHelpers = {
      @returns {String} returns the file extension
 
      */
-    getFileExtension: function (pStrPath) {
+    NS.FSLoaderHelpers.getFileExtension = function (pStrPath) {
         "use strict";
         return pStrPath.split('.').pop();
-    },
+    };
 
-    identifyTagType: function (pHTMLElement) {
+    NS.FSLoaderHelpers.identifyTagType = function (pHTMLElement) {
         "use strict";
         switch (pHTMLElement.tagName.toUpperCase()) {
             case "IMG":
@@ -106,7 +142,7 @@ window.FSLoaderHelpers = {
                 return {tag:pHTMLElement, path:pHTMLElement.src, type:FSLoaderHelpers.TYPE_JAVASCRIPT};
                 break;
         };
-    },
+    };
 
     /**
 
@@ -119,7 +155,7 @@ window.FSLoaderHelpers = {
      @returns {Array} returns a array of founded values for the specific rule
 
      */
-    findRule: function (pCssRuleList, pRule) {
+    NS.FSLoaderHelpers.findRule = function (pCssRuleList, pRule) {
         if (pCssRuleList === null) return [];
         var i,
             total= pCssRuleList.length,
@@ -141,7 +177,7 @@ window.FSLoaderHelpers = {
         }
 
         return arrFound;
-    },
+    };
 
     /**
 
@@ -153,7 +189,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if binary and false if not
 
      */
-    isData: function(pStrType) {
+    NS.FSLoaderHelpers.isData = function(pStrType) {
         "use strict";
         switch (pStrType) {
             case FSLoaderHelpers.TYPE_JSON:
@@ -163,7 +199,7 @@ window.FSLoaderHelpers = {
             default:
                 return false;
         };
-    },
+    };
 
     /**
 
@@ -175,10 +211,10 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns the Blob URL
 
      */
-    getURLByBlob: function (pObjBlob) {
+    NS.FSLoaderHelpers.getURLByBlob = function (pObjBlob) {
         "use strict";
         return window.URL.createObjectURL(pObjBlob);
-    },
+    };
 
     /**
 
@@ -188,7 +224,7 @@ window.FSLoaderHelpers = {
      @returns {Boolean} returns true if supports and false if not
 
      */
-    isXHR2Supported: function () {
+    NS.FSLoaderHelpers.isXHR2Supported = function () {
         var xhr = new XMLHttpRequest;
 
         return (
@@ -201,85 +237,9 @@ window.FSLoaderHelpers = {
                 )
 
             );
-    }
-};/**
- * Created with JetBrains WebStorm.
- * Author: caio.franchi
- * Date: 03/10/12
- * Time: 16:17
- */
+    };
 
-/**
-
- @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
-
- @description Single LoaderItem for registering data of each loadable element
- @namespace window
- @constructor
- @class FSLoaderItem
- @param {FSLoader} pRef The FSLoader owner of this item
- @param {String} pStrPath The path for loading
- @param {Object} pObjOptions Options for this individual loading
- */
-window.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
-    "use strict";
-    //setup
-    this.id = "loader-item-" + pRef.items.length; //it the id was not set, generate automatically
-    this.path = pStrPath;
-    this.options = {};
-    this.reference = pRef;
-    this.data = undefined;
-    this.type = undefined;
-    this.params = {};
-    this.method = FSLoaderHelpers.METHOD_GET;
-    this.retries = 0;
-    this.retriesLeft = 0;
-    this.loadingType = undefined;
-
-    //preventCache?
-    this.preventCache = false;
-
-    //defined by system
-    this.element = undefined;
-    this.state = FSLoaderHelpers.STATE_UNLOADED;
-    this.queue = undefined;
-    this.data = undefined;
-    this.bytesTotal = 0;
-    this.bytesLoaded = 0;
-    this.progress = 0;
-
-    if (pObjOptions !== undefined) {
-        this.options = pObjOptions;
-        //id
-        if (pObjOptions.id !== undefined) {
-            this.id = pObjOptions.id;
-        }
-        //type of file
-        if (pObjOptions.type === undefined) {
-            this.type = pRef.getFileType(pStrPath);
-        } else {
-            this.type = pObjOptions.type;
-        }
-
-        //method for loading
-        if (pObjOptions.method !== undefined) {
-            this.method = pObjOptions.method;
-        }
-
-        //prevent cache
-        if (pObjOptions.preventCache !== undefined) {
-            this.preventCache = pObjOptions.preventCache;
-        }
-
-        //retries?
-        if (pObjOptions.retries !== undefined) {
-            this.retries = this.retriesLeft = pObjOptions.retries;
-        }
-    } else {
-        //type of file
-        this.type = pRef.getFileType(pStrPath);
-    }
-};// namespace
+} (F_NAMESPACE));// SET NAMESPACE
 var F_NAMESPACE;
 if (this.fs) {
     //if FS framework is defined, we change the namespace/scope
@@ -292,13 +252,131 @@ if (this.fs) {
 (function(pNamespace) {
     "use strict";
 
-    var CUR_NAMESPACE = pNamespace;
+    var NS = pNamespace;
+
     /**
-     * @class FSLoader
-     * @param pObjDefaultOptions The option for the loader.
+     * Single LoaderItem for registering data of each loadable element
+     * @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+     * @protected
+     * @class FSLoaderItem
+     * @constructor
+     * @param {FSLoader} pRef The FSLoader owner of this item
+     * @param {String} pStrPath The path for loading
+     * @param {Object} pObjOptions Options for this individual loading
      * @constructor
      */
-    CUR_NAMESPACE.FSLoader = function (pObjDefaultOptions) {
+    NS.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
+        "use strict";
+        //setup
+        this.id = "loader-item-" + pRef.items.length; //it the id was not set, generate automatically
+        this.path = pStrPath;
+        this.options = {};
+        this.reference = pRef;
+        this.data = undefined;
+        this.type = undefined;
+        this.params = {};
+        this.method = FSLoaderHelpers.METHOD_GET;
+        this.retries = 0;
+        this.retriesLeft = 0;
+        this.loadingType = undefined;
+
+        //preventCache?
+        this.preventCache = false;
+
+        //defined by system
+        this.element = undefined;
+        this.state = FSLoaderHelpers.STATE_UNLOADED;
+        this.queue = undefined;
+        this.data = undefined;
+        this.bytesTotal = 0;
+        this.bytesLoaded = 0;
+        this.progress = 0;
+
+        if (pObjOptions !== undefined) {
+            this.options = pObjOptions;
+            //id
+            if (pObjOptions.id !== undefined) {
+                this.id = pObjOptions.id;
+            }
+            //type of file
+            if (pObjOptions.type === undefined) {
+                this.type = pRef.getFileType(pStrPath);
+            } else {
+                this.type = pObjOptions.type;
+            }
+
+            //method for loading
+            if (pObjOptions.method !== undefined) {
+                this.method = pObjOptions.method;
+            }
+
+            //prevent cache
+            if (pObjOptions.preventCache !== undefined) {
+                this.preventCache = pObjOptions.preventCache;
+            }
+
+            //retries?
+            if (pObjOptions.retries !== undefined) {
+                this.retries = this.retriesLeft = pObjOptions.retries;
+            }
+        } else {
+            //type of file
+            this.type = pRef.getFileType(pStrPath);
+        }
+    };
+
+} (F_NAMESPACE));
+/*
+ Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
+/*jslint browser: true*/
+/*global document,console,StringUtils*/
+
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
+} else {
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
+}
+
+(function(pNamespace) {
+    "use strict";
+
+    var NS = pNamespace;
+
+    /**
+     * FSLoader - A simple and user-friendly script for lazy loading assets on the fly and also for preloading then.
+     * @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
+     * @class FSLoader
+     * @param {Object} [pObjDefaultOptions] The option for the loader.
+     * @param {DOMElement} [pObjDefaultOptions.container]
+     * @param {Boolean} [pObjDefaultOptions.preventCache]
+     * @param {String} [pObjDefaultOptions.id]
+     * @constructor
+     */
+    NS.FSLoader = function (pObjDefaultOptions) {
         this.currentLoading = false;
         this.items = [ ];
         this.options = { };
@@ -314,15 +392,18 @@ if (this.fs) {
         if (this.options !== undefined && this.options.container !== undefined) {
             this.containerElement = this.options.container;
         } else {
-            this.containerElement = document.createElement("div");
-            this.containerElement.id = "divContainerFSLoader";
-            this.containerElement.style.display = "none";
-            document.body.appendChild(this.containerElement);
-            //TODO: get namespace for acess document.body
+            if(document) {
+                this.containerElement = document.createElement("div");
+                this.containerElement.id = "divContainerFSLoader";
+                this.containerElement.style.display = "none";
+                document.body.appendChild(this.containerElement);
+            } else {
+                throw new Error("Document is not available. Please pass a valid containerElement.");
+            }
         }
-    }
+    };
 
-    var proto = CUR_NAMESPACE.FSLoader.prototype;
+    var proto = NS.FSLoader.prototype;
 
     //PUBLIC PROPERTIES
 
@@ -360,7 +441,6 @@ if (this.fs) {
 
     /**
      * @property containerElement
-     * @private
      * @type {HTMLElement}
      * @default undefined
      */
@@ -370,9 +450,22 @@ if (this.fs) {
 
     /**
      * Load a single element
+     * @function
+     * @public
      * @param pStrPath
-     * @param pObjOptions
-     * @param pAutoLoad
+     * @param {Object} [pObjOptions]
+     * @param {String} [pObjOptions.id] An ID for easy get the current item
+     * @param {Boolean} [pObjOptions.preventCache = false]
+     * @param {String} [pObjOptions.type = "auto"]  FSLoaderHelpers.TYPE_JAVASCRIPT, FSLoaderHelpers.TYPE_CSS, FSLoaderHelpers.TYPE_IMAGE, FSLoaderHelpers.TYPE_SOUND, FSLoaderHelpers.TYPE_JSON, FSLoaderHelpers.TYPE_XML, FSLoaderHelpers.TYPE_SVG, FSLoaderHelpers.TYPE_TEXT
+     * @param {String} [pObjOptions.loadingType = "tag"] FSLoaderHelpers.LOAD_AS_TAGS, LOAD_AS_XHR, FSLoaderHelpers.LOAD_AS_BLOB and LOAD_AS_ARRAY_BUFFER
+     * @param {String} [pObjOptions.method] POST OR GET
+     * @param {Function} [pObjOptions.onstart]
+     * @param {Array} [pObjOptions.onstartparams]
+     * @param {Function} [pObjOptions.onerror]
+     * @param {Array} [pObjOptions.onerrorparams]
+     * @param {Function} [pObjOptions.oncomplete]
+     * @param {Array} [pObjOptions.oncompleteparams]
+     * @param {Boolean} [pAutoLoad=true]
      * @return {FSLoaderItem}
      */
     proto.load = function (pStrPath, pObjOptions, pAutoLoad) {
@@ -389,19 +482,19 @@ if (this.fs) {
         }
 
         return currentItem;
-    }
+    };
 
     //get element by id
     proto.get = function (pValue) {
         "use strict";
         return this.getElementByAttribute("id", pValue);
-    }
+    };
 
     //get element by attribute
     proto.getElementByAttribute = function (pAttribute, pValue) {
         "use strict";
         return this.items[this.items.indexByObjectValue(pAttribute, pValue)];
-    }
+    };
 
     //PRIVATE METHODS
     /*
@@ -424,7 +517,7 @@ if (this.fs) {
         } else {
             return pStrURL;
         }
-    }
+    };
 
     /**
      * Method for detecting the best method for loading an element
@@ -435,25 +528,25 @@ if (this.fs) {
     proto.identifyLoadingType = function (pStrType) {
         "use strict";
         //if the file is a binary
-        if (FSLoaderHelpers.isBinary(pStrType) === true) {
-            if (FSLoaderHelpers.isXHR2Supported()) {
+        if (NS.FSLoaderHelpers.isBinary(pStrType) === true) {
+            if (NS.FSLoaderHelpers.isXHR2Supported()) {
                 //verify if its possible to load as XHR2 and return the BLOB
-                //return FSLoaderHelpers.LOAD_AS_XHR2;
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                //return NS.FSLoaderHelpers.LOAD_AS_XHR2;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             } else {
                 //if its not possible, load as tag
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             }
         } else {
             //if it text content
-            if (FSLoaderHelpers.isData(pStrType)) {
-                return FSLoaderHelpers.LOAD_AS_XHR;
+            if (NS.FSLoaderHelpers.isData(pStrType)) {
+                return NS.FSLoaderHelpers.LOAD_AS_XHR;
             } else {
                 //if its TAG (js, css, svg)
-                return FSLoaderHelpers.LOAD_AS_TAGS;
+                return NS.FSLoaderHelpers.LOAD_AS_TAGS;
             }
         }
-    }
+    };
 
     /**
      * Generate the element TAG based on file type
@@ -465,18 +558,18 @@ if (this.fs) {
     proto.generateTagByType = function (pStrType, pStrPath) {
         "use strict";
         switch (pStrType) {
-            case FSLoaderHelpers.TYPE_CSS:
+            case NS.FSLoaderHelpers.TYPE_CSS:
                 return this.createCssTag(pStrPath);
-            case FSLoaderHelpers.TYPE_JAVASCRIPT:
+            case NS.FSLoaderHelpers.TYPE_JAVASCRIPT:
                 return this.createJavascriptTag(pStrPath);
-            case FSLoaderHelpers.TYPE_IMAGE:
+            case NS.FSLoaderHelpers.TYPE_IMAGE:
                 return this.createImageTag(pStrPath);
-            case FSLoaderHelpers.TYPE_SVG:
+            case NS.FSLoaderHelpers.TYPE_SVG:
                 return this.createSVGTag(pStrPath);
-            case FSLoaderHelpers.TYPE_SOUND:
+            case NS.FSLoaderHelpers.TYPE_SOUND:
                 return this.createSoundTag(pStrPath);
         }
-    }
+    };
 
     /**
      * Get file type based on his extension's path
@@ -486,32 +579,32 @@ if (this.fs) {
      */
     proto.getFileType = function (pStrPath) {
         "use strict";
-        var strExtension = FSLoaderHelpers.getFileExtension(pStrPath);
+        var strExtension = NS.FSLoaderHelpers.getFileExtension(pStrPath);
 
         switch (strExtension) {
             case "ogg":
             case "mp3":
             case "wav":
-                return FSLoaderHelpers.TYPE_SOUND;
+                return NS.FSLoaderHelpers.TYPE_SOUND;
             case "jpeg":
             case "jpg":
             case "gif":
             case "png":
-                return FSLoaderHelpers.TYPE_IMAGE;
+                return NS.FSLoaderHelpers.TYPE_IMAGE;
             case "json":
-                return FSLoaderHelpers.TYPE_JSON;
+                return NS.FSLoaderHelpers.TYPE_JSON;
             case "xml":
-                return FSLoaderHelpers.TYPE_XML;
+                return NS.FSLoaderHelpers.TYPE_XML;
             case "css":
-                return FSLoaderHelpers.TYPE_CSS;
+                return NS.FSLoaderHelpers.TYPE_CSS;
             case "js":
-                return FSLoaderHelpers.TYPE_JAVASCRIPT;
+                return NS.FSLoaderHelpers.TYPE_JAVASCRIPT;
             case 'svg':
-                return FSLoaderHelpers.TYPE_SVG;
+                return NS.FSLoaderHelpers.TYPE_SVG;
             default:
-                return FSLoaderHelpers.TYPE_TEXT;
+                return NS.FSLoaderHelpers.TYPE_TEXT;
         }
-    }
+    };
 
     proto.createJavascriptTag = function (pStrPath) {
         "use strict";
@@ -522,7 +615,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createSVGTag = function (pStrPath) {
         "use strict";
@@ -533,7 +626,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createSoundTag = function (pStrPath) {
         "use strict";
@@ -544,7 +637,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createCssTag = function (pStrPath) {
         "use strict";
@@ -555,7 +648,7 @@ if (this.fs) {
         elScript.setAttribute("href", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.createImageTag = function (pStrPath) {
         "use strict";
@@ -565,7 +658,7 @@ if (this.fs) {
         elScript.setAttribute("src", pStrPath);
 
         return elScript;
-    }
+    };
 
     proto.executeLoad = function (pFSLoaderItem) {
         "use strict";
@@ -599,7 +692,7 @@ if (this.fs) {
 
 
         //LOAD ASSET AS TAG
-        if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_TAGS) {
+        if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_TAGS) {
 
             //load as tags
             var elScript = this.generateTagByType(pFSLoaderItem.type, this.evaluateURL(pFSLoaderItem.path, pFSLoaderItem.preventCache));
@@ -639,7 +732,7 @@ if (this.fs) {
                 throw new Error("Cannot appendChild script on the given container element.");
             };
 
-        } else if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_XHR || (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER)) {
+        } else if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR || (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER)) {
 
             //console.log(pFSLoaderItem);
             // Old IE versions use a different approach
@@ -654,7 +747,7 @@ if (this.fs) {
             }
 
             //IE9 doesn't support .overrideMimeType(), so we need to check for it.
-            if (pFSLoaderItem.type === FSLoaderHelpers.TYPE_TEXT &&  this.currentRequest.overrideMimeType) {
+            if (pFSLoaderItem.type === NS.FSLoaderHelpers.TYPE_TEXT &&  this.currentRequest.overrideMimeType) {
                 this.currentRequest.overrideMimeType('text/plain; charset=x-user-defined');
             }
 
@@ -663,11 +756,11 @@ if (this.fs) {
             this.currentRequest.send();
 
             //if xhr2 is supported and the file is binary
-            if (FSLoaderHelpers.isBinary(pFSLoaderItem.type) && FSLoaderHelpers.isXHR2Supported()) {
-                if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_BLOB) {
+            if (NS.FSLoaderHelpers.isBinary(pFSLoaderItem.type) && NS.FSLoaderHelpers.isXHR2Supported()) {
+                if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB) {
                     //if is Blob
                     this.currentRequest.responseType = 'blob';
-                } else if (pFSLoaderItem.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
+                } else if (pFSLoaderItem.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
                     //If is a array buffer
                     this.currentRequest.responseType = 'arraybuffer';
                 }
@@ -683,7 +776,7 @@ if (this.fs) {
         }
 
         return false;
-    }
+    };
 
     //returns a FSLoaderItem configured
     proto.generateLoaderItem = function (pStrPath, pObjOptions) {
@@ -703,7 +796,7 @@ if (this.fs) {
 
 
         return objLoaderItem;
-    },
+    };
 
     //function to remove listeners from the current element
     proto.removeEventsFromElement = function (pEl) {
@@ -711,26 +804,26 @@ if (this.fs) {
         pEl.removeEventListener('load', this.onItemLoadComplete);
         pEl.removeEventListener('error', this.onItemLoadError);
         pEl.removeEventListener('progress', this.onItemLoadProgress);
-    },
+    };
 
     //INTERNAL EVENTS
 
     //internal event on complete
     proto.onItemLoadComplete = function (event) {
         "use strict";
-        this.state = FSLoaderHelpers.STATE_FINISHED;
+        this.state = NS.FSLoaderHelpers.STATE_FINISHED;
         this.progress = 100;
-        if (this.reference.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || this.reference.loadingType === FSLoaderHelpers.LOAD_AS_XHR) {
+        if (this.reference.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || this.reference.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR) {
             //this.data =
             this.element = event.currentTarget;
         }
 
         //assign return data by type
-        if (this.loadingType === FSLoaderHelpers.LOAD_AS_TAGS) {
+        if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_TAGS) {
             this.data = this.element;
-        } else if (this.loadingType === FSLoaderHelpers.LOAD_AS_XHR) {
+        } else if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_XHR) {
             this.data = event.currentTarget.response;
-        } else if (this.loadingType === FSLoaderHelpers.LOAD_AS_BLOB || this.loadingType === FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
+        } else if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_BLOB || this.loadingType === NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER) {
             this.data = event.currentTarget.response;
         }
 
@@ -748,7 +841,7 @@ if (this.fs) {
         }
         //removing events from the element
         this.reference.removeEventsFromElement(this.element);
-    }
+    };
 
     //internal event on error
     proto.onItemLoadProgress = function (event) {
@@ -758,7 +851,7 @@ if (this.fs) {
             return;
         }
         //assign
-        this.state = FSLoaderHelpers.STATE_LOADING;
+        this.state = NS.FSLoaderHelpers.STATE_LOADING;
         this.bytesLoaded = event.loaded;
         this.bytesTotal =  event.total;
         this.progress = Math.round((100 * this.bytesLoaded) / this.bytesTotal);
@@ -775,7 +868,7 @@ if (this.fs) {
                 this.options.onprogress.apply(this);
             }
         }
-    }
+    };
 
     //internal event on error
     proto.onItemLoadError = function (event) {
@@ -797,7 +890,7 @@ if (this.fs) {
             //retries has ended, consider the error
 
             //assign
-            this.state = FSLoaderHelpers.STATE_ERROR;
+            this.state = NS.FSLoaderHelpers.STATE_ERROR;
 
             //if the item belongs to a queue, exec the callback
             if (this.queue !== undefined) {
@@ -812,158 +905,161 @@ if (this.fs) {
                 }
             }
         }
-    }
+    };
 
 } (F_NAMESPACE));
-/**
- * Created with JetBrains WebStorm.
- * Author: Caio Franchi
- * Date: 01/10/12
- * Time: 17:32
- */
-
-/**
-
- @author <a href="http://caiofranchi.com.br">Caio Franchi</a>
-
- @namespace window
-
- @class FSLoaderQueue
- @param {Object} pObjDefaultOptions The option for the queue.
- */
-window.FSLoaderQueue = function (pObjDefaultOptions) {
-    "use strict";
-
-    this.reference = new window.FSLoader(pObjDefaultOptions);
-
-    this.currentIndex = 0;
-    this.currentItem = undefined;
-    this.ignoreErrors = true;
-    this.isPaused = false;
-    this.firstStart = true;
-    //
-    this.total = 0;
-    this.totalLoaded = 0;
-    this.progress = 0;
-    //
-    this.options = {};
-
-    if (pObjDefaultOptions !== undefined) this.options = pObjDefaultOptions;
-
-    if (this.options !== undefined) {
-        if (this.options.ignoreErrors !== undefined) {
-            this.ignoreErrors = this.options.ignoreErrors;
-        };
-
-        if (this.options.ignoreErrors !== undefined) {
-            this.ignoreErrors = this.options.ignoreErrors;
-        };
-    }
-
-    FSLoader.call(this, pObjDefaultOptions);
-};
-
-//Inherits
-if (window.FSLoader !== undefined) {
-    FSLoaderQueue.prototype = new window.FSLoader;
-    FSLoaderQueue.prototype.constructor = window.FSLoaderQueue;
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
 } else {
-    window.FSLoaderQueue = undefined;
-    throw new Error("FSLoaderQueue needs FSLoader for work.");
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
 }
 
-FSLoaderQueue.prototype.add = function (pPaths, pObjOptions) { //onqueueerror,onqueuecomplete,onqueueprogress
+(function(pNamespace) {
     "use strict";
 
-    var filteredPath = [],
-        totalPaths,
-        i,
-        currentItem = undefined;
-    if (Object.prototype.toString.call(pPaths) === '[object Array]') {
-        filteredPath = pPaths;
+    var NS = pNamespace;
+
+    /**
+     * Manage and load a queue of loadable items
+     * @class FSLoaderQueue
+     * @constructor
+     * @param {Object} [pObjDefaultOptions]
+     * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
+     * @param {Boolean} [pObjDefaultOptions.preventCache]
+     * @param {DOMElement} [pObjDefaultOptions.container]
+     * @param {Boolean} [pObjDefaultOptions.ignoreErrors=true]
+     * @param {Function} [pObjDefaultOptions.onitemstart]
+     * @param {Array} [pObjDefaultOptions.onitemstartparams]
+     * @param {Function} [pObjDefaultOptions.onitemerror]
+     * @param {Array} [pObjDefaultOptions.onitemerrorparams]
+     * @param {Function} [pObjDefaultOptions.onitemcomplete]
+     * @param {Array} [pObjDefaultOptions.onitemcompleteparams]
+     * @param {Function} [pObjDefaultOptions.onqueueerror]
+     * @param {Array} [pObjDefaultOptions.onqueueerrorparams]
+     * @param {Function} [pObjDefaultOptions.onqueuecomplete]
+     * @param {Array} [pObjDefaultOptions.onqueuecompleteparams]
+     * @param {Function} [pObjDefaultOptions.onqueueprogress]
+     * @param {Array} [pObjDefaultOptions.onqueueprogressparams]
+     */
+    NS.FSLoaderQueue = function (pObjDefaultOptions) {
+        "use strict";
+
+        this.reference = new NS.FSLoader(pObjDefaultOptions);
+
+        this.currentIndex = 0;
+        this.currentItem = undefined;
+        this.ignoreErrors = true;
+        this.isPaused = false;
+        this.firstStart = true;
+        //
+        this.total = 0;
+        this.totalLoaded = 0;
+        this.progress = 0;
+        //
+        this.options = {};
+
+        if (pObjDefaultOptions !== undefined) this.options = pObjDefaultOptions;
+
+        if (this.options !== undefined) {
+            if (this.options.ignoreErrors !== undefined) {
+                this.ignoreErrors = this.options.ignoreErrors;
+            };
+
+            if (this.options.ignoreErrors !== undefined) {
+                this.ignoreErrors = this.options.ignoreErrors;
+            };
+        }
+
+        NS.FSLoader.call(this, pObjDefaultOptions);
+    };
+
+    //Inherits
+    if (NS.FSLoader !== undefined) {
+        NS.FSLoaderQueue.prototype = new NS.FSLoader;
+        NS.FSLoaderQueue.constructor = NS.FSLoaderQueue;
     } else {
-        filteredPath.push(pPaths);
+        NS.FSLoaderQueue = undefined;
+        throw new Error("FSLoaderQueue needs FSLoader for work.");
     }
 
-    totalPaths = filteredPath.length;
+    var proto = NS.FSLoaderQueue.prototype;
 
-    for (i = 0; i < totalPaths; i++) {
-        currentItem = this.load(filteredPath[i], pObjOptions, false);
-        currentItem.queue = this;
-        currentItem.reference = this.reference;
+    proto.add = function (pPaths, pObjOptions) { //onqueueerror,onqueuecomplete,onqueueprogress
+        "use strict";
 
-        //this.items.push(currentItem); //already execs on inherited method LOAD
-        this.total = this.items.length;
+        var filteredPath = [],
+            totalPaths,
+            i,
+            currentItem = undefined;
+        if (Object.prototype.toString.call(pPaths) === '[object Array]') {
+            filteredPath = pPaths;
+        } else {
+            filteredPath.push(pPaths);
+        }
+
+        totalPaths = filteredPath.length;
+
+        for (i = 0; i < totalPaths; i++) {
+            currentItem = this.load(filteredPath[i], pObjOptions, false);
+            currentItem.queue = this;
+            currentItem.reference = this.reference;
+
+            //this.items.push(currentItem); //already execs on inherited method LOAD
+            this.total = this.items.length;
+        }
+    };
+
+    proto.start = function () {
+        "use strict";
+        if (this.items.length === 0)
+            return;
+        if (this.firstStart === true) {
+            this.triggerCallbackEvent("onqueuestart");
+
+            //trigger the single item event
+            this.updateQueueProgress();
+        }
+        this.currentItem = this.items[this.currentIndex];
+        this.executeLoad(this.currentItem);
+
+        this.firstStart = false;
+    };
+
+    proto.pause = function () {
+        "use strict";
+        this.isPaused = true;
+        //this.currentItem.stop();
+    };
+
+    proto.next = function () {
+        this.currentIndex++;
+        this.start();
     }
-};
 
-FSLoaderQueue.prototype.start = function () {
-    "use strict";
-    if (this.items.length === 0)
-        return;
-    if (this.firstStart === true) {
-        this.triggerCallbackEvent("onqueuestart");
+    proto.previous = function () {
+        this.currentIndex--;
+        this.start();
+    }
+
+    proto.verifyQueueEnd = function () {
+        if (this.currentIndex < (this.total - 1)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    proto.onQueueItemComplete = function (pItem) {
+
+        this.totalLoaded++;
 
         //trigger the single item event
-        this.updateQueueProgress();
-    }
-    this.currentItem = this.items[this.currentIndex];
-    this.executeLoad(this.currentItem);
-
-    this.firstStart = false;
-};
-
-FSLoaderQueue.prototype.pause = function () {
-    "use strict";
-    this.isPaused = true;
-    //this.currentItem.stop();
-};
-
-FSLoaderQueue.prototype.next = function () {
-    this.currentIndex++;
-    this.start();
-}
-
-FSLoaderQueue.prototype.previous = function () {
-    this.currentIndex--;
-    this.start();
-}
-
-FSLoaderQueue.prototype.verifyQueueEnd = function () {
-    if (this.currentIndex < (this.total - 1)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-FSLoaderQueue.prototype.onQueueItemComplete = function (pItem) {
-
-    this.totalLoaded++;
-
-    //trigger the single item event
-    this.triggerCallbackEvent("onitemcomplete");
-    //
-    this.updateQueueProgress();
-
-    if(this.verifyQueueEnd()) {
-        this.next();
-    } else {
-        //queue complete
-        this.triggerCallbackEvent("onqueuecomplete");
-    }
-};
-
-FSLoaderQueue.prototype.onQueueItemError = function (pItem) {
-
-    //trigger the single item event
-    this.triggerCallbackEvent("onitemerror");
-
-    if (this.ignoreErrors === true) {
-        //to not distort current queue progress we set the progress of this item with 100
-        pItem.progress = 100;
-
-        //trigger the single item event
+        this.triggerCallbackEvent("onitemcomplete");
+        //
         this.updateQueueProgress();
 
         if(this.verifyQueueEnd()) {
@@ -972,141 +1068,196 @@ FSLoaderQueue.prototype.onQueueItemError = function (pItem) {
             //queue complete
             this.triggerCallbackEvent("onqueuecomplete");
         }
-    } else {
-        //trigger on queue error
-        this.triggerCallbackEvent("onqueueerror");
-    }
-};
+    };
 
-FSLoaderQueue.prototype.onQueueItemProgress = function (pItem) {
-    //trigger the single item event
-    this.updateQueueProgress();
-};
+    proto.onQueueItemError = function (pItem) {
 
-FSLoaderQueue.prototype.onQueueItemStart = function (pItem) {
-    this.triggerCallbackEvent("onitemstart", pItem);
-};
+        //trigger the single item event
+        this.triggerCallbackEvent("onitemerror");
 
-FSLoaderQueue.prototype.updateQueueProgress = function () {
-    var numTotalProgress = 0;
+        if (this.ignoreErrors === true) {
+            //to not distort current queue progress we set the progress of this item with 100
+            pItem.progress = 100;
 
-    for (var i = 0; i < this.items.length; i++) {
-        numTotalProgress += this.items[i].progress;
-    }
+            //trigger the single item event
+            this.updateQueueProgress();
 
-    this.progress = Math.round((numTotalProgress*100) / (100*this.items.length)); //calculate progress based on loaded items progress
-    //item and queue both progress on the same time
-    this.triggerCallbackEvent("onitemprogress");
-    this.triggerCallbackEvent("onqueueprogress");
-};
-
-FSLoaderQueue.prototype.triggerCallbackEvent = function (pStrEventID, pDefinedSource) {
-    var ref = this;
-    if (pDefinedSource !== undefined) {
-        //exec on base of other reference
-        ref = pDefinedSource
-    }
-
-    if (ref.options === undefined) return;
-    if (ref.options[pStrEventID] !== undefined) {
-        if (ref.options[pStrEventID + "params"] !== undefined) {
-            ref.options[pStrEventID].apply(ref, ref.options[pStrEventID + "params"]);
+            if(this.verifyQueueEnd()) {
+                this.next();
+            } else {
+                //queue complete
+                this.triggerCallbackEvent("onqueuecomplete");
+            }
         } else {
-            ref.options[pStrEventID].apply(ref);
+            //trigger on queue error
+            this.triggerCallbackEvent("onqueueerror");
         }
     };
-};/**
- * Created with JetBrains WebStorm.
- * Author: Caio Franchi
- * Date: 01/10/12
- * Time: 17:32
- */
-/*
 
+    proto.onQueueItemProgress = function (pItem) {
+        //trigger the single item event
+        this.updateQueueProgress();
+    };
+
+    proto.onQueueItemStart = function (pItem) {
+        this.triggerCallbackEvent("onitemstart", pItem);
+    };
+
+    proto.updateQueueProgress = function () {
+        var numTotalProgress = 0;
+
+        for (var i = 0; i < this.items.length; i++) {
+            numTotalProgress += this.items[i].progress;
+        }
+
+        this.progress = Math.round((numTotalProgress*100) / (100*this.items.length)); //calculate progress based on loaded items progress
+        //item and queue both progress on the same time
+        this.triggerCallbackEvent("onitemprogress");
+        this.triggerCallbackEvent("onqueueprogress");
+    };
+
+    proto.triggerCallbackEvent = function (pStrEventID, pDefinedSource) {
+        var ref = this;
+        if (pDefinedSource !== undefined) {
+            //exec on base of other reference
+            ref = pDefinedSource
+        }
+
+        if (ref.options === undefined) return;
+        if (ref.options[pStrEventID] !== undefined) {
+            if (ref.options[pStrEventID + "params"] !== undefined) {
+                ref.options[pStrEventID].apply(ref, ref.options[pStrEventID + "params"]);
+            } else {
+                ref.options[pStrEventID].apply(ref);
+            }
+        };
+    };
+
+} (F_NAMESPACE));/*
 WARNINGS:
     - Set FSPreloader tag after the tags that you want do load with data-preload="true" when not using DOM ready event
     - Cross-domain stylesheets cssRules being null
 */
-
-//Inherits
-window.FSPreloader = function (pObjDefaultOptions) {
-    this.container = document;
-    this.elements = [];
-    this.cssElements = [];
-
-    FSLoaderQueue.call(this, pObjDefaultOptions);
-};
-
-if (window.FSLoaderQueue !== undefined) {
-    FSPreloader.prototype = new window.FSLoaderQueue;
-    FSPreloader.prototype.constructor = window.FSLoaderQueue;
+// SET NAMESPACE
+var F_NAMESPACE;
+if (this.fs) {
+    //if FS framework is defined, we change the namespace/scope
+    F_NAMESPACE = this.fs;
 } else {
-    window.FSPreloader = undefined;
-    throw new Error("FSPreloader needs FSLoaderQueue to work.");
+    //if not, set window as a namespace/scope
+    F_NAMESPACE = window;
 }
 
-FSPreloader.prototype.parseCss = function (pCssElements) {
+(function(pNamespace) {
     "use strict";
-    if (pCssElements !== undefined) {
 
-        //DOM stylesheets are available
-        var list = [],
-            foundedPaths = [],
-            totalStylesheets = pCssElements.length,
-            i;
+    var NS = pNamespace;
 
-        //parse stylesheets to search for images and other loadable items
-        for (i = 0; i < totalStylesheets; i++) {
+    /**
+     * Set a parsed queue for preloading page elements
+     * @class FSPreloader
+     * @constructor
+     * @param {Object} [pObjDefaultOptions]
+     * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
+     * @param {Boolean} [pObjDefaultOptions.preventCache]
+     * @param {DOMElement} [pObjDefaultOptions.container]
+     * @param {Boolean} [pObjDefaultOptions.ignoreErrors=true]
+     * @param {Function} [pObjDefaultOptions.onitemstart]
+     * @param {Array} [pObjDefaultOptions.onitemstartparams]
+     * @param {Function} [pObjDefaultOptions.onitemerror]
+     * @param {Array} [pObjDefaultOptions.onitemerrorparams]
+     * @param {Function} [pObjDefaultOptions.onitemcomplete]
+     * @param {Array} [pObjDefaultOptions.onitemcompleteparams]
+     * @param {Function} [pObjDefaultOptions.onqueueerror]
+     * @param {Array} [pObjDefaultOptions.onqueueerrorparams]
+     * @param {Function} [pObjDefaultOptions.onqueuecomplete]
+     * @param {Array} [pObjDefaultOptions.onqueuecompleteparams]
+     * @param {Function} [pObjDefaultOptions.onqueueprogress]
+     * @param {Array} [pObjDefaultOptions.onqueueprogressparams]
+     */
+    NS.FSPreloader = function (pObjDefaultOptions) {
+        this.container = document;
+        this.elements = [];
+        this.cssElements = [];
 
-            //prevent
-            if (pCssElements[i] !== null && pCssElements[i] !== undefined) {
-                if (pCssElements[i].cssRules !== null || pCssElements[i].rules !== null) {
-                    if (typeof pCssElements[i].cssRules !== "undefined") {
-                        list = pCssElements[i].cssRules;
-                    } else if (typeof pCssElements[i].rules !== "undefined") {
-                        list = pCssElements[i].rules;
+        NS.FSLoaderQueue.call(this, pObjDefaultOptions);
+    };
+
+    //Inherits
+    if (NS.FSLoaderQueue !== undefined) {
+        NS.FSPreloader.prototype = new NS.FSLoaderQueue;
+        NS.FSPreloader.prototype.constructor = NS.FSLoaderQueue;
+    } else {
+        NS.FSPreloader = undefined;
+        throw new Error("FSPreloader needs FSLoaderQueue to work.");
+    }
+
+    var proto = NS.FSPreloader.prototype;
+
+    proto.parseCss = function (pCssElements) {
+        "use strict";
+        if (pCssElements !== undefined) {
+
+            //DOM stylesheets are available
+            var list = [],
+                foundedPaths = [],
+                totalStylesheets = pCssElements.length,
+                i;
+
+            //parse stylesheets to search for images and other loadable items
+            for (i = 0; i < totalStylesheets; i++) {
+
+                //prevent
+                if (pCssElements[i] !== null && pCssElements[i] !== undefined) {
+                    if (pCssElements[i].cssRules !== null || pCssElements[i].rules !== null) {
+                        if (typeof pCssElements[i].cssRules !== "undefined") {
+                            list = pCssElements[i].cssRules;
+                        } else if (typeof pCssElements[i].rules !== "undefined") {
+                            list = pCssElements[i].rules;
+                        }
+                    } else {
+                        console.log("WARNING: cssRules/rules is null for the element: " + pCssElements[i].href);
                     }
-                } else {
-                    console.log("WARNING: cssRules/rules is null for the element: " + pCssElements[i].href);
-                }
 
-                //add the founded background images
-                this.add(FSLoaderHelpers.findRule(list, "backgroundImage"));
+                    //add the founded background images
+                    this.add(NS.FSLoaderHelpers.findRule(list, "backgroundImage"));
+                }
             }
         }
-    }
-}
+    };
 
-FSPreloader.prototype.parseDocument = function (pObjOptions) { //css:true|false
+    proto.parseDocument = function (pObjOptions) { //css:true|false
 
-    //IMGS
-    //var imageList = document.getElementsByTagName("img");
+        //IMGS
+        //var imageList = document.getElementsByTagName("img");
 
-    //Parse elements to be preloaded
-    this.elements = document.querySelectorAll('[data-preload="true"]');
-    var total = this.elements.length;
-    var currentEl,
-        i;
+        //Parse elements to be preloaded
+        this.elements = document.querySelectorAll('[data-preload="true"]');
+        var total = this.elements.length;
+        var currentEl,
+            i;
 
-    //add loadable identified elements
-    for (i = 0; i < total; i++) {
-        currentEl = FSLoaderHelpers.identifyTagType(this.elements[i]);
+        //add loadable identified elements
+        for (i = 0; i < total; i++) {
+            currentEl = NS.FSLoaderHelpers.identifyTagType(this.elements[i]);
 
-        if (currentEl.type === FSLoaderHelpers.TYPE_CSS) {
-            //if it is a CSS, put on CSS parse list to load embeded images
-            this.cssElements.push(currentEl.tag.sheet);
-        } else if (currentEl.type === FSLoaderHelpers.TYPE_IMAGE) {
-            //if is a IMG element, add to load queue
-            this.add(currentEl.path);
+            if (currentEl.type === NS.FSLoaderHelpers.TYPE_CSS) {
+                //if it is a CSS, put on CSS parse list to load embeded images
+                this.cssElements.push(currentEl.tag.sheet);
+            } else if (currentEl.type === NS.FSLoaderHelpers.TYPE_IMAGE) {
+                //if is a IMG element, add to load queue
+                this.add(currentEl.path);
+            }
         }
-    }
 
 
-    if (pObjOptions !== undefined) {
-        //parse elements inside css
-        if (pObjOptions.cssDependencies === "true" || pObjOptions.cssDependencies === true) {
-            this.parseCss(this.cssElements);
+        if (pObjOptions !== undefined) {
+            //parse elements inside css
+            if (pObjOptions.cssDependencies === "true" || pObjOptions.cssDependencies === true) {
+                this.parseCss(this.cssElements);
+            }
         }
-    }
 
-}
+    };
+
+} (F_NAMESPACE));
