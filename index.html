@@ -46,32 +46,159 @@
 
 
       <section id="main_content">
-        <h3>Welcome to GitHub Pages.</h3>
+        <h1>FSLoader</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>A complete and lightweight lib for single loading, queue loading and preloading HTML assets.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>FEATURES</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>Load both binary (Sound files, images) and text files (JSON, XML, TEXT, CSS, JAVASCRIPT, SVG, XML)</li>
+<li>XHR2 ready</li>
+<li>Lightweight</li>
+<li>Preloading</li>
+<li>Lazy Loading</li>
+<li>Queue Loading</li>
+</ul><h2>EXAMPLES</h2>
 
-<h3>Designer Templates</h3>
+<h3>SETTING UP A SIMPLE FS LOADER</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<div class="highlight"><pre>var MainLoader = new FSLoader();
+MainLoader.load("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",{oncomplete:onCompleteJquery});
 
-<h3>Rather Drive Stick?</h3>
+function onCompleteJquery(){
+    console.log(this.data);
+}
+</pre></div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<h3>LOADABLE FILE TYPES</h3>
 
-<h3>Authors and Contributors</h3>
+<div class="highlight"><pre>//FSLoaderHelpers.TYPE_CSS // DEFAULT
+//FSLoaderHelpers.TYPE_JAVASCRIPT : "script",
+//FSLoaderHelpers.TYPE_CSS : "css",
+//FSLoaderHelpers.TYPE_IMAGE : "image",
+//FSLoaderHelpers.TYPE_SOUND : "sound",
+//FSLoaderHelpers.TYPE_JSON : "json",
+//FSLoaderHelpers.TYPE_XML : "xml",
+//FSLoaderHelpers.TYPE_SVG : "svg",
+//FSLoaderHelpers.TYPE_TEXT : "text"
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
 
-<h3>Support or Contact</h3>
+function onCompleteImage(){
+    console.log(this.data);
+}
+</pre></div>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<h3>LOADING TYPES</h3>
+
+<div class="highlight"><pre>//FSLoaderHelpers.LOAD_AS_TAGS // DEFAULT
+//FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER
+//FSLoaderHelpers.LOAD_AS_BLOB
+//FSLoaderHelpers.LOAD_AS_XHR
+
+var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, loadingType: FSLoaderHelpers.LOAD_AS_BLOB});
+
+function onCompleteImage(){
+    console.log(this.data);
+}
+</pre></div>
+
+<h3>RETRIES</h3>
+
+<div class="highlight"><pre>var MainLoader = new FSLoader();
+MainLoader.load("img/logo.png",{oncomplete:onCompleteImage, onerror:onErrorLoadingImage, retries:3});
+
+function onCompleteImage() {
+    console.log(this.data);
+}
+
+function onErrorLoadingImage() {
+    console.log("ERRO LOADING"+this);
+}
+</pre></div>
+
+<h3>SETTING UP A QUEUE</h3>
+
+<div class="highlight"><pre>var queue  = new FSLoaderQueue({onqueuecomplete:onCompleteQueue, onqueueprogress:onProgressQueue);
+queue.add("img/logo.png");
+queue.add("//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js", {id:"jquery-external", oncomplete:onCompletejQuery});
+queue.add("js/libs/jquery-1.8.0.min.js");
+queue.add("logo.php", {type:FSLoaderHelpers.TYPE_CSS});
+queue.start();
+
+function onProgressQueue () {
+    console.log("Progress: "+this.progress);
+}
+
+function onCompleteQueue () {
+    console.log("Queue Complete");
+}
+
+</pre></div>
+
+<h3>QUEUE EVENTS</h3>
+
+<h3>PRELOADER</h3>
+
+<div class="highlight"><pre><span class="c">&lt;!-- SET THE ITEMS THAT YOU WANT TO PRELOAD WITH THE DATA TAG 'data-preload="true"' --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/logo.png"</span> <span class="na">data-preload=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<div class="highlight"><pre>preload = new FSPreloader({onqueuecomplete: onCompleteQueue, onqueueprogress: onQueueProgress, ignoreErrors: true});
+preload.parseDocument({cssDependencies: true}); //cssDepencies:true parse the loaded CSS and load the background-images used
+
+preload.add("img/logo.png"); //add another item
+preload.start(); //start preloading
+
+function onQueueProgress () {
+    console.log(this.progress); //the total progress percentage of the loaded queue
+}
+
+function onCompleteQueue () {
+    console.log("PRELOAD COMPLETE");
+}
+
+</pre></div>
+
+<h3>MIXING PRELOADER</h3>
+
+<p>The FSPreloader Class extendes the FSLoaderQueue Class, that means that you can interact with a preloader almost like a queue.
+So, you can also add another items to preload that aren't on the DOM.</p>
+
+<div class="highlight"><pre>preload = new FSPreloader({onqueuecomplete: onCompleteQueue, onqueueprogress: onQueueProgress});
+preload.parseDocument({cssDependencies: true});
+
+preload.add("img/logo.png"); //add another item
+preload.add("services/test.php", {id:"LoginService", myParam:"example", type:FSLoaderHelpers.TYPE_JSON, loadingType:FSLoaderHelpers.LOAD_AS_XHR}); //add a service
+
+preload.start(); //start preloading
+
+function onQueueProgress () {
+    console.log(this.progress); //the total progress percentage of the loaded queue
+}
+
+function onCompleteQueue () {
+    console.log("PRELOAD COMPLETE");
+
+    //getting an specific item by ID, if specified on loading
+    var item = preload.get("LoginService"); //return a FSLoaderItem, feel free to manipulate it =)
+    console.log(item.data);
+}
+
+</pre></div>
+
+<h2>Contributing</h2>
+
+<p>Feel free to fork and add issues =)</p>
+
+<h2>Project information</h2>
+
+<ul>
+<li>+(</li>
+</ul><h2>License</h2>
       </section>
 
       <footer>
