@@ -49,7 +49,6 @@ window.URL = window.URL || window.webkitURL;
         throw new Error("Do not instantiate a static class");
     }
 
-
     //LOADING TYPES
 
     /**
@@ -83,10 +82,31 @@ window.URL = window.URL || window.webkitURL;
      * @type {String}
      */
     NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER = "arraybuffer";
+
+    /**
+     * @property DEFAULT_LOAD_TYPE
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.DEFAULT_LOAD_TYPE = "tag";
 
     //LOAD METHODS
+
+    /**
+     * @property METHOD_GET
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.METHOD_GET = "GET";
+
+    /**
+     * @property METHOD_POST
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.METHOD_POST = "POST";
 
     //LOADER TYPES (read-only)
@@ -116,14 +136,9 @@ window.URL = window.URL || window.webkitURL;
     NS.FSLoaderHelpers.MERGE_OPTIONS = ["preventCache"];
 
     /**
-
-     @method isBinary
-     @description Verify by the file type if its binary or not
-
-     @param {String} pStrType The file type
-
-     @returns {Boolean} returns true if binary and false if not
-
+     * Verify by the file type if its binary or not
+     * @param {String} pStrType The file type
+     * @return {Boolean}
      */
     NS.FSLoaderHelpers.isBinary = function (pStrType) {
         "use strict";
@@ -137,14 +152,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method getFileExtension
-     @description Returns a String with the file extension of a given URL
-
-     @param {String} pStrPath The URL path
-
-     @returns {String} returns the file extension
-
+     * Returns a String with the file extension of a given URL
+     * @param  {String} pStrPath The URL path
+     * @return {String} The file extension
      */
     NS.FSLoaderHelpers.getFileExtension = function (pStrPath) {
         "use strict";
@@ -167,15 +177,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method findRule
-     @description Helper method for search and get a specific cssRule on a CSSRuleList
-
-     @param {CSSRuleList} pCssRuleList The rule list
-     @param {String} pRule the rule name
-
-     @returns {Array} returns a array of founded values for the specific rule
-
+     * Helper method for search and get a specific cssRule on a CSSRuleList
+     * @param {CSSRuleList} pCssRuleList The rule list
+     * @return {Array} returns a array of founded values for the specific rule
      */
     NS.FSLoaderHelpers.findRule = function (pCssRuleList, pRule) {
         if (pCssRuleList === null) return [];
@@ -202,14 +206,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method isBinary
-     @description Verify by the file type if its binary or not
-
-     @param {String} pStrType The file type
-
-     @returns {Boolean} returns true if binary and false if not
-
+     * Verify by the file type if is a text data type or not
+     * @param {String} pStrType The file type
+     * @return {Boolean}
      */
     NS.FSLoaderHelpers.isData = function(pStrType) {
         "use strict";
@@ -224,14 +223,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method getURLByBlob
-     @description shortcut method to convert a BLOB into a loadable URL
-
-     @param {String} pObjBlob The Blob
-
-     @returns {Boolean} returns the Blob URL
-
+     * Shortcut method to convert a BLOB into a loadable URL
+     * @param {String} pObjBlob The Blob
+     * @return {Boolean} returns the Blob URL
      */
     NS.FSLoaderHelpers.getURLByBlob = function (pObjBlob) {
         "use strict";
@@ -239,12 +233,8 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method isXHR2Supported
-     @description Verify if the current browser supports XHR2
-
-     @returns {Boolean} returns true if supports and false if not
-
+     * Verify if the current browser supports XHR2
+     * @return {Boolean} true if supports and false if not
      */
     NS.FSLoaderHelpers.isXHR2Supported = function () {
         var xhr = new XMLHttpRequest;

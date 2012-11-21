@@ -44,7 +44,6 @@ if (this.fs) {
      * @param {FSLoader} pRef The FSLoader owner of this item
      * @param {String} pStrPath The path for loading
      * @param {Object} pObjOptions Options for this individual loading
-     * @constructor
      */
     NS.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
         "use strict";

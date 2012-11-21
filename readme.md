@@ -1,6 +1,6 @@
 # FSLoader
 
- A complete and lightweight(~14kb) lib for single loading, queue loading and preloading assets.
+ A complete and lightweight lib for single loading, queue loading and preloading HTML assets.
 
 ## FEATURES
 

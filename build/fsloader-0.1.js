@@ -1,3 +1,25 @@
+/*
+ Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
 // SET NAMESPACE
 var F_NAMESPACE;
 if (this.fs) {
@@ -26,7 +48,6 @@ window.URL = window.URL || window.webkitURL;
     NS.FSLoaderHelpers = function () {
         throw new Error("Do not instantiate a static class");
     }
-
 
     //LOADING TYPES
 
@@ -61,10 +82,31 @@ window.URL = window.URL || window.webkitURL;
      * @type {String}
      */
     NS.FSLoaderHelpers.LOAD_AS_ARRAY_BUFFER = "arraybuffer";
+
+    /**
+     * @property DEFAULT_LOAD_TYPE
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.DEFAULT_LOAD_TYPE = "tag";
 
     //LOAD METHODS
+
+    /**
+     * @property METHOD_GET
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.METHOD_GET = "GET";
+
+    /**
+     * @property METHOD_POST
+     * @protected
+     * @static
+     * @type {String}
+     */
     NS.FSLoaderHelpers.METHOD_POST = "POST";
 
     //LOADER TYPES (read-only)
@@ -94,14 +136,9 @@ window.URL = window.URL || window.webkitURL;
     NS.FSLoaderHelpers.MERGE_OPTIONS = ["preventCache"];
 
     /**
-
-     @method isBinary
-     @description Verify by the file type if its binary or not
-
-     @param {String} pStrType The file type
-
-     @returns {Boolean} returns true if binary and false if not
-
+     * Verify by the file type if its binary or not
+     * @param {String} pStrType The file type
+     * @return {Boolean}
      */
     NS.FSLoaderHelpers.isBinary = function (pStrType) {
         "use strict";
@@ -115,14 +152,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method getFileExtension
-     @description Returns a String with the file extension of a given URL
-
-     @param {String} pStrPath The URL path
-
-     @returns {String} returns the file extension
-
+     * Returns a String with the file extension of a given URL
+     * @param  {String} pStrPath The URL path
+     * @return {String} The file extension
      */
     NS.FSLoaderHelpers.getFileExtension = function (pStrPath) {
         "use strict";
@@ -145,15 +177,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method findRule
-     @description Helper method for search and get a specific cssRule on a CSSRuleList
-
-     @param {CSSRuleList} pCssRuleList The rule list
-     @param {String} pRule the rule name
-
-     @returns {Array} returns a array of founded values for the specific rule
-
+     * Helper method for search and get a specific cssRule on a CSSRuleList
+     * @param {CSSRuleList} pCssRuleList The rule list
+     * @return {Array} returns a array of founded values for the specific rule
      */
     NS.FSLoaderHelpers.findRule = function (pCssRuleList, pRule) {
         if (pCssRuleList === null) return [];
@@ -180,14 +206,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method isBinary
-     @description Verify by the file type if its binary or not
-
-     @param {String} pStrType The file type
-
-     @returns {Boolean} returns true if binary and false if not
-
+     * Verify by the file type if is a text data type or not
+     * @param {String} pStrType The file type
+     * @return {Boolean}
      */
     NS.FSLoaderHelpers.isData = function(pStrType) {
         "use strict";
@@ -202,14 +223,9 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method getURLByBlob
-     @description shortcut method to convert a BLOB into a loadable URL
-
-     @param {String} pObjBlob The Blob
-
-     @returns {Boolean} returns the Blob URL
-
+     * Shortcut method to convert a BLOB into a loadable URL
+     * @param {String} pObjBlob The Blob
+     * @return {Boolean} returns the Blob URL
      */
     NS.FSLoaderHelpers.getURLByBlob = function (pObjBlob) {
         "use strict";
@@ -217,12 +233,8 @@ window.URL = window.URL || window.webkitURL;
     };
 
     /**
-
-     @method isXHR2Supported
-     @description Verify if the current browser supports XHR2
-
-     @returns {Boolean} returns true if supports and false if not
-
+     * Verify if the current browser supports XHR2
+     * @return {Boolean} true if supports and false if not
      */
     NS.FSLoaderHelpers.isXHR2Supported = function () {
         var xhr = new XMLHttpRequest;
@@ -239,7 +251,29 @@ window.URL = window.URL || window.webkitURL;
             );
     };
 
-} (F_NAMESPACE));// SET NAMESPACE
+} (F_NAMESPACE));/*
+ Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
+// SET NAMESPACE
 var F_NAMESPACE;
 if (this.fs) {
     //if FS framework is defined, we change the namespace/scope
@@ -263,7 +297,6 @@ if (this.fs) {
      * @param {FSLoader} pRef The FSLoader owner of this item
      * @param {String} pStrPath The path for loading
      * @param {Object} pObjOptions Options for this individual loading
-     * @constructor
      */
     NS.FSLoaderItem = function (pRef, pStrPath, pObjOptions) {
         "use strict";
@@ -484,13 +517,27 @@ if (this.fs) {
         return currentItem;
     };
 
-    //get element by id
+    /**
+     * Get loaded element by ID
+     * @function
+     * @public
+     * @param {String} pValue
+     * @return {FSLoaderItem}
+     */
     proto.get = function (pValue) {
         "use strict";
         return this.getElementByAttribute("id", pValue);
     };
 
     //get element by attribute
+    /**
+     * Get loaded element by specified attribute
+     * @function
+     * @public
+     * @param {String} pAttribute
+     * @param {String} pValue
+     * @return {FSLoaderItem}
+     */
     proto.getElementByAttribute = function (pAttribute, pValue) {
         "use strict";
         return this.items[this.items.indexByObjectValue(pAttribute, pValue)];
@@ -503,7 +550,6 @@ if (this.fs) {
      @param {Boolean} pPreventCache If the URL must be prevented from cache
      @return {String} Evaluated URL
      */
-
     proto.evaluateURL = function (pStrURL, pPreventCache) {
         "use strict";
         if (pPreventCache === true) {
@@ -606,6 +652,11 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Helper method for creating a script tag
+     * @param {String} pStrPath
+     * @return {Element}
+     */
     proto.createJavascriptTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("script");
@@ -617,6 +668,11 @@ if (this.fs) {
         return elScript;
     };
 
+    /**
+     * Helper method for creating a SVG object tag
+     * @param pStrPath
+     * @return {Element}
+     */
     proto.createSVGTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("object");
@@ -698,25 +754,6 @@ if (this.fs) {
             var elScript = this.generateTagByType(pFSLoaderItem.type, this.evaluateURL(pFSLoaderItem.path, pFSLoaderItem.preventCache));
 
             pFSLoaderItem.element = elScript;
-
-
-            //console.log(elScript.readyState+"rdyStateFora");
-            /*if (elScript.readyState !== undefined) {  //IE7+
-             elScript.onreadystatechange = function () {
-             //console.log(elScript.readyState+"rdyState");
-             if (elScript.readyState === "loaded" || elScript.readyState === "complete") {
-             elScript.onreadystatechange = null;
-             //if(onCompleteCallback) onCompleteCallback();
-             //console.log(elScript.readyState+"rdyState");
-             this.onItemLoadComplete.apply(pFSLoaderItem);
-             } else if (elScript.readyState === "loaded") {
-             this.onItemLoadError.apply(pFSLoaderItem);
-             }
-             };
-             } else {
-             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
-             elScript.addEventListener("error", this.onItemLoadError.bind(pFSLoaderItem), false);
-             }*/
 
             //setup event
             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
@@ -908,6 +945,28 @@ if (this.fs) {
     };
 
 } (F_NAMESPACE));
+/*
+ Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
 // SET NAMESPACE
 var F_NAMESPACE;
 if (this.fs) {
@@ -926,6 +985,7 @@ if (this.fs) {
     /**
      * Manage and load a queue of loadable items
      * @class FSLoaderQueue
+     * @extends FSLoader
      * @constructor
      * @param {Object} [pObjDefaultOptions]
      * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
@@ -988,6 +1048,23 @@ if (this.fs) {
 
     var proto = NS.FSLoaderQueue.prototype;
 
+    /**
+     * Add an element to the queue
+     * @param {String} pPaths
+     * @param {Object} [pObjOptions]
+     * @param {Object} [pObjOptions]
+     * @param {String} [pObjOptions.id] An ID for easy get the current item
+     * @param {Boolean} [pObjOptions.preventCache = false]
+     * @param {String} [pObjOptions.type = "auto"]  FSLoaderHelpers.TYPE_JAVASCRIPT, FSLoaderHelpers.TYPE_CSS, FSLoaderHelpers.TYPE_IMAGE, FSLoaderHelpers.TYPE_SOUND, FSLoaderHelpers.TYPE_JSON, FSLoaderHelpers.TYPE_XML, FSLoaderHelpers.TYPE_SVG, FSLoaderHelpers.TYPE_TEXT
+     * @param {String} [pObjOptions.loadingType = "tag"] FSLoaderHelpers.LOAD_AS_TAGS, LOAD_AS_XHR, FSLoaderHelpers.LOAD_AS_BLOB and LOAD_AS_ARRAY_BUFFER
+     * @param {String} [pObjOptions.method] POST OR GET
+     * @param {Function} [pObjOptions.onstart]
+     * @param {Array} [pObjOptions.onstartparams]
+     * @param {Function} [pObjOptions.onerror]
+     * @param {Array} [pObjOptions.onerrorparams]
+     * @param {Function} [pObjOptions.oncomplete]
+     * @param {Array} [pObjOptions.oncompleteparams]
+     */
     proto.add = function (pPaths, pObjOptions) { //onqueueerror,onqueuecomplete,onqueueprogress
         "use strict";
 
@@ -1013,6 +1090,9 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Start loading the queue
+     */
     proto.start = function () {
         "use strict";
         if (this.items.length === 0)
@@ -1029,30 +1109,55 @@ if (this.fs) {
         this.firstStart = false;
     };
 
+    /**
+     * Pauses the queue
+     * //TODO:Develop
+     */
     proto.pause = function () {
         "use strict";
         this.isPaused = true;
         //this.currentItem.stop();
     };
 
+    /**
+     * Go to next item
+     * @private
+     */
     proto.next = function () {
         this.currentIndex++;
         this.start();
-    }
+    };
 
+    /**
+     * Goto previous item
+     * @private
+     */
     proto.previous = function () {
         this.currentIndex--;
         this.start();
-    }
+    };
 
+    /**
+     * Verify if the queue index has reached the end
+     * @protected
+     * @private
+     * @return {Boolean}
+     */
     proto.verifyQueueEnd = function () {
         if (this.currentIndex < (this.total - 1)) {
             return true;
         } else {
             return false;
         }
-    }
+    };
 
+    /**
+     * Internal event for queue load complete
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemComplete = function (pItem) {
 
         this.totalLoaded++;
@@ -1070,6 +1175,13 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Internal event for queue load error
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemError = function (pItem) {
 
         //trigger the single item event
@@ -1094,15 +1206,34 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Internal event for queue load progress
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemProgress = function (pItem) {
         //trigger the single item event
         this.updateQueueProgress();
     };
 
+    /**
+     * Internal event for queue load start
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemStart = function (pItem) {
         this.triggerCallbackEvent("onitemstart", pItem);
     };
 
+    /**
+     * Verifies and count the current queue progress
+     * @private
+     * @protected
+     */
     proto.updateQueueProgress = function () {
         var numTotalProgress = 0;
 
@@ -1116,6 +1247,13 @@ if (this.fs) {
         this.triggerCallbackEvent("onqueueprogress");
     };
 
+    /**
+     * Helper method for trigger the user's binded events
+     * @protected
+     * @private
+     * @param pStrEventID
+     * @param pDefinedSource
+     */
     proto.triggerCallbackEvent = function (pStrEventID, pDefinedSource) {
         var ref = this;
         if (pDefinedSource !== undefined) {
@@ -1134,6 +1272,28 @@ if (this.fs) {
     };
 
 } (F_NAMESPACE));/*
+ Copyright (c) 2012 Caio Franchi http://caiofranchi.com.br
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of
+ this software and associated documentation files (the "Software"), to deal in
+ the Software without restriction, including without limitation the rights to
+ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+ of the Software, and to permit persons to whom the Software is furnished to do
+ so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+ */
+
+/*
 WARNINGS:
     - Set FSPreloader tag after the tags that you want do load with data-preload="true" when not using DOM ready event
     - Cross-domain stylesheets cssRules being null
@@ -1156,6 +1316,7 @@ if (this.fs) {
     /**
      * Set a parsed queue for preloading page elements
      * @class FSPreloader
+     * @extends FSLoaderQueue
      * @constructor
      * @param {Object} [pObjDefaultOptions]
      * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
@@ -1194,6 +1355,10 @@ if (this.fs) {
 
     var proto = NS.FSPreloader.prototype;
 
+    /**
+     * The addition
+     * @param pCssElements
+     */
     proto.parseCss = function (pCssElements) {
         "use strict";
         if (pCssElements !== undefined) {
@@ -1226,6 +1391,11 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Method for FSPreloader parse the current document and load elements
+     * @param {Object} [pObjOptions]
+     * @param {Boolean} [pObjOptions.cssDependencies] If you want the preloader parse the images on Css to load
+     */
     proto.parseDocument = function (pObjOptions) { //css:true|false
 
         //IMGS

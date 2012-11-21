@@ -43,6 +43,7 @@ if (this.fs) {
     /**
      * Set a parsed queue for preloading page elements
      * @class FSPreloader
+     * @extends FSLoaderQueue
      * @constructor
      * @param {Object} [pObjDefaultOptions]
      * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
@@ -81,6 +82,10 @@ if (this.fs) {
 
     var proto = NS.FSPreloader.prototype;
 
+    /**
+     * The addition
+     * @param pCssElements
+     */
     proto.parseCss = function (pCssElements) {
         "use strict";
         if (pCssElements !== undefined) {
@@ -113,6 +118,11 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Method for FSPreloader parse the current document and load elements
+     * @param {Object} [pObjOptions]
+     * @param {Boolean} [pObjOptions.cssDependencies] If you want the preloader parse the images on Css to load
+     */
     proto.parseDocument = function (pObjOptions) { //css:true|false
 
         //IMGS

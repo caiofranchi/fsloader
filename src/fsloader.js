@@ -156,13 +156,27 @@ if (this.fs) {
         return currentItem;
     };
 
-    //get element by id
+    /**
+     * Get loaded element by ID
+     * @function
+     * @public
+     * @param {String} pValue
+     * @return {FSLoaderItem}
+     */
     proto.get = function (pValue) {
         "use strict";
         return this.getElementByAttribute("id", pValue);
     };
 
     //get element by attribute
+    /**
+     * Get loaded element by specified attribute
+     * @function
+     * @public
+     * @param {String} pAttribute
+     * @param {String} pValue
+     * @return {FSLoaderItem}
+     */
     proto.getElementByAttribute = function (pAttribute, pValue) {
         "use strict";
         return this.items[this.items.indexByObjectValue(pAttribute, pValue)];
@@ -175,7 +189,6 @@ if (this.fs) {
      @param {Boolean} pPreventCache If the URL must be prevented from cache
      @return {String} Evaluated URL
      */
-
     proto.evaluateURL = function (pStrURL, pPreventCache) {
         "use strict";
         if (pPreventCache === true) {
@@ -278,6 +291,11 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Helper method for creating a script tag
+     * @param {String} pStrPath
+     * @return {Element}
+     */
     proto.createJavascriptTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("script");
@@ -289,6 +307,11 @@ if (this.fs) {
         return elScript;
     };
 
+    /**
+     * Helper method for creating a SVG object tag
+     * @param pStrPath
+     * @return {Element}
+     */
     proto.createSVGTag = function (pStrPath) {
         "use strict";
         var elScript = document.createElement("object");
@@ -370,25 +393,6 @@ if (this.fs) {
             var elScript = this.generateTagByType(pFSLoaderItem.type, this.evaluateURL(pFSLoaderItem.path, pFSLoaderItem.preventCache));
 
             pFSLoaderItem.element = elScript;
-
-
-            //console.log(elScript.readyState+"rdyStateFora");
-            /*if (elScript.readyState !== undefined) {  //IE7+
-             elScript.onreadystatechange = function () {
-             //console.log(elScript.readyState+"rdyState");
-             if (elScript.readyState === "loaded" || elScript.readyState === "complete") {
-             elScript.onreadystatechange = null;
-             //if(onCompleteCallback) onCompleteCallback();
-             //console.log(elScript.readyState+"rdyState");
-             this.onItemLoadComplete.apply(pFSLoaderItem);
-             } else if (elScript.readyState === "loaded") {
-             this.onItemLoadError.apply(pFSLoaderItem);
-             }
-             };
-             } else {
-             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
-             elScript.addEventListener("error", this.onItemLoadError.bind(pFSLoaderItem), false);
-             }*/
 
             //setup event
             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);

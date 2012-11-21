@@ -38,6 +38,7 @@ if (this.fs) {
     /**
      * Manage and load a queue of loadable items
      * @class FSLoaderQueue
+     * @extends FSLoader
      * @constructor
      * @param {Object} [pObjDefaultOptions]
      * @param {String} [pObjDefaultOptions.id] An ID for the QUEUE
@@ -100,6 +101,23 @@ if (this.fs) {
 
     var proto = NS.FSLoaderQueue.prototype;
 
+    /**
+     * Add an element to the queue
+     * @param {String} pPaths
+     * @param {Object} [pObjOptions]
+     * @param {Object} [pObjOptions]
+     * @param {String} [pObjOptions.id] An ID for easy get the current item
+     * @param {Boolean} [pObjOptions.preventCache = false]
+     * @param {String} [pObjOptions.type = "auto"]  FSLoaderHelpers.TYPE_JAVASCRIPT, FSLoaderHelpers.TYPE_CSS, FSLoaderHelpers.TYPE_IMAGE, FSLoaderHelpers.TYPE_SOUND, FSLoaderHelpers.TYPE_JSON, FSLoaderHelpers.TYPE_XML, FSLoaderHelpers.TYPE_SVG, FSLoaderHelpers.TYPE_TEXT
+     * @param {String} [pObjOptions.loadingType = "tag"] FSLoaderHelpers.LOAD_AS_TAGS, LOAD_AS_XHR, FSLoaderHelpers.LOAD_AS_BLOB and LOAD_AS_ARRAY_BUFFER
+     * @param {String} [pObjOptions.method] POST OR GET
+     * @param {Function} [pObjOptions.onstart]
+     * @param {Array} [pObjOptions.onstartparams]
+     * @param {Function} [pObjOptions.onerror]
+     * @param {Array} [pObjOptions.onerrorparams]
+     * @param {Function} [pObjOptions.oncomplete]
+     * @param {Array} [pObjOptions.oncompleteparams]
+     */
     proto.add = function (pPaths, pObjOptions) { //onqueueerror,onqueuecomplete,onqueueprogress
         "use strict";
 
@@ -125,6 +143,9 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Start loading the queue
+     */
     proto.start = function () {
         "use strict";
         if (this.items.length === 0)
@@ -141,30 +162,55 @@ if (this.fs) {
         this.firstStart = false;
     };
 
+    /**
+     * Pauses the queue
+     * //TODO:Develop
+     */
     proto.pause = function () {
         "use strict";
         this.isPaused = true;
         //this.currentItem.stop();
     };
 
+    /**
+     * Go to next item
+     * @private
+     */
     proto.next = function () {
         this.currentIndex++;
         this.start();
-    }
+    };
 
+    /**
+     * Goto previous item
+     * @private
+     */
     proto.previous = function () {
         this.currentIndex--;
         this.start();
-    }
+    };
 
+    /**
+     * Verify if the queue index has reached the end
+     * @protected
+     * @private
+     * @return {Boolean}
+     */
     proto.verifyQueueEnd = function () {
         if (this.currentIndex < (this.total - 1)) {
             return true;
         } else {
             return false;
         }
-    }
+    };
 
+    /**
+     * Internal event for queue load complete
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemComplete = function (pItem) {
 
         this.totalLoaded++;
@@ -182,6 +228,13 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Internal event for queue load error
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemError = function (pItem) {
 
         //trigger the single item event
@@ -206,15 +259,34 @@ if (this.fs) {
         }
     };
 
+    /**
+     * Internal event for queue load progress
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemProgress = function (pItem) {
         //trigger the single item event
         this.updateQueueProgress();
     };
 
+    /**
+     * Internal event for queue load start
+     * @event
+     * @private
+     * @protected
+     * @param pItem
+     */
     proto.onQueueItemStart = function (pItem) {
         this.triggerCallbackEvent("onitemstart", pItem);
     };
 
+    /**
+     * Verifies and count the current queue progress
+     * @private
+     * @protected
+     */
     proto.updateQueueProgress = function () {
         var numTotalProgress = 0;
 
@@ -228,6 +300,13 @@ if (this.fs) {
         this.triggerCallbackEvent("onqueueprogress");
     };
 
+    /**
+     * Helper method for trigger the user's binded events
+     * @protected
+     * @private
+     * @param pStrEventID
+     * @param pDefinedSource
+     */
     proto.triggerCallbackEvent = function (pStrEventID, pDefinedSource) {
         var ref = this;
         if (pDefinedSource !== undefined) {
