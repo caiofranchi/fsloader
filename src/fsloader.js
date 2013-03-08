@@ -146,7 +146,6 @@ if (this.fs) {
 
         //create a FS Loader for the request
         var currentItem = this.generateLoaderItem(pStrPath, pObjOptions);
-
         this.items.push(currentItem);
 
         if (pAutoLoad === undefined || pAutoLoad === true) {
@@ -329,8 +328,8 @@ if (this.fs) {
 
         //setup element
         elScript.setAttribute("type", "audio/ogg");
+        elScript.setAttribute("preload", "auto");
         elScript.setAttribute("src", pStrPath);
-
         return elScript;
     };
 
@@ -393,8 +392,13 @@ if (this.fs) {
             var elScript = this.generateTagByType(pFSLoaderItem.type, this.evaluateURL(pFSLoaderItem.path, pFSLoaderItem.preventCache));
 
             pFSLoaderItem.element = elScript;
-
             //setup event
+
+            //fix for audio
+            if(pFSLoaderItem.type===NS.FSLoaderHelpers.TYPE_SOUND) {
+                elScript.addEventListener("loadeddata", this.onItemLoadComplete.bind(pFSLoaderItem), false);
+            }
+
             elScript.addEventListener("load", this.onItemLoadComplete.bind(pFSLoaderItem), false);
             elScript.addEventListener("error", this.onItemLoadError.bind(pFSLoaderItem), false);
 
@@ -493,7 +497,7 @@ if (this.fs) {
             //this.data =
             this.element = event.currentTarget;
         }
-
+        console.log("DEBUG AQUI");
         //assign return data by type
         if (this.loadingType === NS.FSLoaderHelpers.LOAD_AS_TAGS) {
             this.data = this.element;

@@ -79,12 +79,13 @@ queue.start();*/
 });*/
 
 teste = new FSPreloader({onqueuestart: onQueueStart, onqueuecomplete: onCompleteQueue, onqueueprogress: onQueueProgress, ignoreErrors: true});
-teste.parseDocument({cssDependencies: true});
+//teste.parseDocument({cssDependencies: true});
 /*
  console.log("Elementos lidos:");
  console.log(teste.items);
  */
 teste.add("img/logo.png");
+teste.add("audio/hadouken.mp3"); //,{loadingType:FSLoaderHelpers.LOAD_AS_XHR}
 teste.start();
 
 function onQueueStart (){
