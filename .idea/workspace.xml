@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1f3231-d3ae-48ad-8d47-78b62e52178a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/index.html" afterPath="$PROJECT_DIR$/examples/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/examples/js/script.js" afterPath="$PROJECT_DIR$/examples/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fsloader.js" afterPath="$PROJECT_DIR$/src/fsloader.js" />
     </list>
     <ignored path="fsloader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/examples/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="38" selection-start="2445" selection-end="2445" vertical-scroll-proportion="-24.4">
+            <state line="50" column="50" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.6946565">
               <folding />
             </state>
           </provider>
@@ -56,10 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compile.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="compile.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compiler/compile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="18" selection-start="140" selection-end="140" vertical-scroll-proportion="0.097087376">
+            <state line="34" column="39" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,10 +119,10 @@
         <option value="$PROJECT_DIR$/src/fspreloader.js" />
         <option value="$PROJECT_DIR$/src/fsloaderhelpers.js" />
         <option value="$PROJECT_DIR$/src/fsloaderqueue.js" />
-        <option value="$PROJECT_DIR$/examples/index.html" />
         <option value="$PROJECT_DIR$/src/fsloaderitem.js" />
         <option value="$PROJECT_DIR$/examples/js/script.js" />
         <option value="$PROJECT_DIR$/src/fsloader.js" />
+        <option value="$PROJECT_DIR$/examples/index.html" />
       </list>
     </option>
   </component>
@@ -492,13 +488,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/examples/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="38" selection-start="2445" selection-end="2445" vertical-scroll-proportion="-24.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fspreloader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="9" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
@@ -564,7 +553,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compiler/compile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="18" selection-start="140" selection-end="140" vertical-scroll-proportion="0.097087376">
+        <state line="34" column="39" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="50" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.6946565">
           <folding />
         </state>
       </provider>
